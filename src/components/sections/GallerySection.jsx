@@ -124,10 +124,10 @@ export default function GallerySection() {
       <div className="wrap">
         <header className="gallery-page__heading">
           <div><p className="eyebrow">The estate, frame by frame</p><h1>Find your <em>favourite corner.</em></h1></div>
-          <p>Explore Dr Bhagat Farm House. Scroll down or select a thumbnail to discover each space.</p>
+          <p>Explore Selva Tree Hotels & Resorts. Scroll down or select a thumbnail to discover each space.</p>
         </header>
         {farmhouses.length > 1 && (
-          <div className="gallery-page__filters" role="group" aria-label="Filter by farmhouse">
+          <div className="gallery-page__filters" role="group" aria-label="Filter by property">
             <button type="button" aria-pressed={active === 'all'} onClick={() => filter('all')}>All spaces <span>{photos.length}</span></button>
             {farmhouses.map(house => <button type="button" key={house.id} aria-pressed={active === house.id} onClick={() => filter(house.id)}>{house.name}<span>{house.images.length}</span></button>)}
           </div>

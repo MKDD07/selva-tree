@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer className="footer-wrap" ref={footer}>
       <div className="footer">
-        <div className="footer__watermark" aria-hidden="true">Dr Bhagat</div>
+        <div className="footer__watermark" aria-hidden="true">Selva Tree</div>
         <div className="wrap footer__container">
           <div className="footer__intro">
             <div className="footer__intro-copy">

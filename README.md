@@ -1,4 +1,4 @@
-# Selva Tree / Dr Bhagat Farm House
+# Selva Tree Hotels & Resorts
 
 React + Vite frontend with a Cloudflare Worker, R2 photo cache, and D1 photo metadata.
 

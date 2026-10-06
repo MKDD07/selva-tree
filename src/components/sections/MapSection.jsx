@@ -24,7 +24,7 @@ export default function MapSection() {
         <div className="map-section__card">
           <div className="map-section__frame-container">
             <iframe
-              title="Dr Bhagat Farm House Location"
+              title={`${brand.name} Location`}
               src={embedUrl}
               className="map-section__iframe"
               loading="lazy"

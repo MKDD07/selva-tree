@@ -3,12 +3,12 @@
 import { img } from './images';
 
 export const brand = {
-  name: 'Dr Bhagat Farm House',
+  name: 'Selva Tree Hotels & Resorts',
   tagline: 'A private retreat combining nature, sustainability, and luxury.',
   phone: '+91 98110 73959',
   whatsapp: '919811073959',
   email: 'drbhagatfarmhouse@gmail.com',
-  address: 'Dr Bhagat Farm House, Sohna Rural, Gurugram, Haryana 122103',
+  address: 'Selva Tree Hotels & Resorts, Sohna Rural, Gurugram, Haryana 122103',
   mapsUrl: 'https://maps.app.goo.gl/qMk8xXE67VsBXSbu6',
 };
 
@@ -49,8 +49,8 @@ export const galleryImages = [
 
 export const farmhouses = [
   {
-    id: 'dr-bhagat-farm',
-    name: 'Dr Bhagat Farm House',
+    id: 'selva-tree',
+    name: 'Selva Tree Hotels & Resorts',
     tag: 'Private Luxury Estate',
     blurb: 'A private retreat combining nature, sustainability, and luxury with lush lawns, private pool, and peaceful Aravalli surroundings.',
     images: galleryImages,
@@ -59,23 +59,23 @@ export const farmhouses = [
 
 export const faq = [
   { 
-    q: 'Which is the best farmhouse in Gurgaon for a destination wedding?', 
-    a: 'Dr Bhagat Farm House in Sohna, Gurugram offers an idyllic destination wedding venue with sprawling lawns hosting up to 400 guests, 2 guest rooms, poolside settings, and flexible catering and decor policies.' 
+    q: 'Which is the best resort in Gurgaon for a destination wedding?', 
+    a: 'Selva Tree Hotels & Resorts in Sohna, Gurugram offers an idyllic destination wedding venue with sprawling lawns hosting up to 400 guests, 2 guest rooms, poolside settings, and flexible catering and decor policies.' 
   },
   { 
-    q: 'How many guests can Dr Bhagat Farm House accommodate for an event?', 
+    q: 'How many guests can Selva Tree Hotels & Resorts accommodate for an event?', 
     a: 'Our venues accommodate events of all sizes: the drawing room & pre-function lawn host up to 200 guests, while our grand poolside lawn accommodates up to 400 guests with ample private parking.' 
   },
   { 
-    q: 'Is there a banquet hall or indoor space available at Dr Bhagat Farm House?', 
+    q: 'Is there a banquet hall or indoor space available at Selva Tree Hotels & Resorts?', 
     a: 'Yes. We offer an air-conditioned 863 sq. ft. drawing hall with seamless Wi-Fi and attached lawns, ideal for indoor gatherings, weather backups, conferences, and intimate ceremonies.' 
   },
   { 
-    q: 'Can I host a poolside event or Mehndi ceremony at Dr Bhagat Farm House?', 
+    q: 'Can I host a poolside event or Mehndi ceremony at Selva Tree Hotels & Resorts?', 
     a: 'Yes. Our shimmering swimming pool deck and adjoining lawns are popular for vibrant Haldi, Mehndi, cocktail pool parties, and starlit anniversary dinners.' 
   },
   { 
-    q: 'What types of events can be organised at Dr Bhagat Farm House?', 
+    q: 'What types of events can be organised at Selva Tree Hotels & Resorts?', 
     a: 'We host destination weddings, pre-wedding rituals (Haldi/Mehndi/Roka), birthday parties, corporate offsites, retreats, family reunions, and small gatherings under 50 pax.' 
   },
   { 
@@ -95,11 +95,11 @@ export const faq = [
 // Each page is a list of sections. `type` picks the component in components/Sections.jsx.
 export const pages = {
   '/': [
-    { type: 'hero', eyebrow: 'Farmhouse retreat · Manesar, Gurgaon', title: 'Where the city goes quiet.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
+    { type: 'hero', eyebrow: 'Nature-inspired stays · Manesar, Gurgaon', title: 'Where the city goes quiet.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
     { 
       type: 'mosaic', 
       theme: 'rose', 
-      eyebrow: 'The Farmhouse Experience',
+      eyebrow: 'The Selva Tree Experience',
       title: 'Curated comfort, sustainability & thoughtful touches.',
       items: [
         {
@@ -129,7 +129,7 @@ export const pages = {
       theme: 'rose',
       eyebrow: 'YOUR PRIVATE GETAWAY',
       title: 'Let Your Private Oasis Welcome You & Yours',
-      text: 'Dr Bhagat Farm House becomes your private curated escape — meticulously maintained, bathed in nature, and thoughtfully prepared for memorable celebrations and retreats.',
+      text: 'Selva Tree Hotels & Resorts becomes your private curated escape — meticulously maintained, bathed in nature, and thoughtfully prepared for memorable celebrations and retreats.',
       cta: { label: 'Book Your Stay', to: '/contact' },
       image: img('dbf-villa-ext', 1000, 850),
       badges: [
@@ -144,7 +144,7 @@ export const pages = {
       title: 'Unveiling Our Suites',
       subtitle: 'Four distinctive suites, four unforgettable escapes.',
       paragraphs: [
-        'Composed with precision, our collection thoughtfully features accommodation positioned amongst calmness and nestled amidst nature’s beauty at Dr Bhagat Farm House in Manesar. In addition, three of the suites open out to the serene landscapes of the garden while also having glistening views of the pool. The suite facing the Aravalli Hills is very special, as it overlooks the grand hills and offers extraordinary views.',
+        'Composed with precision, our collection thoughtfully features accommodation positioned amongst calmness and nestled amidst nature’s beauty at Selva Tree Hotels & Resorts in Manesar. In addition, three of the suites open out to the serene landscapes of the garden while also having glistening views of the pool. The suite facing the Aravalli Hills is very special, as it overlooks the grand hills and offers extraordinary views.',
         'The property features four rooms evenly divided into two floors. Each room is carefully designed, and the architecture allows the suites to effortlessly feel cosy and be soaked with daylight. A charming bay window is also present in every suite with a bed tucked underneath — the perfect spot to bask in sunlight, lose yourself in a book, or gaze at the stars.',
         'Thanks to our cushioned king beds crafted to offer multiple levels of comfort, we can accommodate up to 20 guests, making us ideal for gatherings for family and friends to celebrate and unwind in style.'
       ],
@@ -166,9 +166,9 @@ export const pages = {
       title: 'Where Celebrations Come to Life',
       subtitle: 'Two expansive lawns spanning over 10,000 sq. ft each.',
       paragraphs: [
-        'Two expansive lawns, each spanning over 10,000 sq. ft, offer the perfect canvas for unforgettable events and celebrations to unfold. At Dr Bhagat Farm House, our distinct event spaces aren’t just lawns; they are versatile spaces crafted with the beauty of nature that serve as the backdrop for some of the most cherished moments in your life.',
-        'Whether you\'re searching for a farmhouse in Gurgaon for birthday party celebrations or looking to host an event that’s unique and personal, we’ve got you covered. From dreamy star-lit weddings and laughter-filled birthday bashes to innovation-sparking corporate retreats and everything in between, let your wildest imaginations soar.',
-        'Want to turn up the vibe? We can arrange for a professional DJ to set the energy and skilled bartenders to mix well-designed drinks, available upon request. Because at Dr Bhagat Farm House, we don’t just host events — we infuse every celebration with creativity.'
+        'Two expansive lawns, each spanning over 10,000 sq. ft, offer the perfect canvas for unforgettable events and celebrations to unfold. At Selva Tree Hotels & Resorts, our distinct event spaces aren’t just lawns; they are versatile spaces crafted with the beauty of nature that serve as the backdrop for some of the most cherished moments in your life.',
+        'Whether you\'re searching for a resort in Gurgaon for birthday celebrations or looking to host an event that’s unique and personal, we’ve got you covered. From dreamy star-lit weddings and laughter-filled birthday bashes to innovation-sparking corporate retreats and everything in between, let your wildest imaginations soar.',
+        'Want to turn up the vibe? We can arrange for a professional DJ to set the energy and skilled bartenders to mix well-designed drinks, available upon request. Because at Selva Tree Hotels & Resorts, we don’t just host events — we infuse every celebration with creativity.'
       ],
       points: [
         '2 expansive lawns (10,000+ sq. ft each)',
@@ -187,7 +187,7 @@ export const pages = {
       title: 'Let Us Feed Your Soul',
       subtitle: 'Indian, Continental, and Chinese cuisine crafted with fresh ingredients.',
       paragraphs: [
-        'At Dr Bhagat Farm House, dining is more than just food; it is about healing the soul. In our world, every moment is to be relished. From that first bite of a delightful snack to a sumptuous dinner, and even the refreshing start of breakfast, the feeling is nothing short of a reward.',
+        'At Selva Tree Hotels & Resorts, dining is more than just food; it is about healing the soul. In our world, every moment is to be relished. From that first bite of a delightful snack to a sumptuous dinner, and even the refreshing start of breakfast, the feeling is nothing short of a reward.',
         'Our painstakingly prepared meal plan aims to deepen your getaway by highlighting the fresh, expertly crafted flavours made with care on the farm. Our Food and Beverages (F&B) Manager ensures that every dining experience at our property is truly a class apart with meticulous attention to detail and a commitment to excellence.',
         'Our chefs use only fresh ingredients, combining traditional techniques with innovative flavours, thus ensuring every dish is a delight for your taste buds. Guests get to choose from our elaborate curated menu.'
       ],
@@ -273,7 +273,7 @@ export const pages = {
           role: 'Destination Wedding',
           location: 'Delhi NCR',
           title: 'The perfect wedding venue under open skies',
-          review: 'Hosting our Sangeet and wedding reception at Dr Bhagat Farm House was the best decision. Having flexibility with outside decorators and catering allowed us to customize every single detail perfectly.',
+          review: 'Hosting our Sangeet and wedding reception at Selva Tree Hotels & Resorts was the best decision. Having flexibility with outside decorators and catering allowed us to customize every single detail perfectly.',
         },
         {
           stars: 5,
@@ -302,15 +302,15 @@ export const pages = {
     { type: 'cta', title: 'Your dates, your people, your farm.', text: 'Tell us what you are planning and we will take care of the rest.', cta: { label: 'Book Now', to: '/contact' } },
   ],
   '/about-us': [
-    { type: 'head', eyebrow: 'About Us', title: 'A breathtaking venue nestled in Gurugram, Haryana.', text: 'Established in 2005, Dr Bhagat Farm House offers picturesque greenery, peaceful landscapes, and a soothing atmosphere.', image: img('dbf-about-head', 2000, 900) },
+    { type: 'head', eyebrow: 'About Us', title: 'A breathtaking venue nestled in Gurugram, Haryana.', text: 'Established in 2005, Selva Tree Hotels & Resorts offers picturesque greenery, peaceful landscapes, and a soothing atmosphere.', image: img('dbf-about-head', 2000, 900) },
     { 
       type: 'split', 
       eyebrow: 'Our Heritage', 
       title: 'Established in 2005, sustained by nature.', 
       text: [
-        'Dr Bhagat Farm House is nestled in Sohna of Gurugram, Haryana, posing as a breathtaking venue idyllic for hosting various functions, staycations, and memorable celebrations. Established in 2005, the estate envelops picturesque greenery and a soothing countryside atmosphere.',
+        'Selva Tree Hotels & Resorts is nestled in Sohna of Gurugram, Haryana, posing as a breathtaking venue idyllic for hosting various functions, staycations, and memorable celebrations. Established in 2005, the estate envelops picturesque greenery and a soothing countryside atmosphere.',
         'This enchanting place provides a serene escape from the chaos of everyday life, making it an ideal setting for both daytime and evening festivities. Breathtaking vistas create an amazing backdrop, elevating the overall ambiance to one of tranquillity and natural beauty.',
-        'Whether you are planning a grand wedding celebration, a family get-together, or an intimate birthday party, Dr Bhagat Farm House offers flexible hospitality with in-house and outside catering, decor, DJ, and alcohol permissions.'
+        'Whether you are planning a grand wedding celebration, a family get-together, or an intimate birthday party, Selva Tree Hotels & Resorts offers flexible hospitality with in-house and outside catering, decor, DJ, and alcohol permissions.'
       ], 
       image: img('dbf-story', 1100, 1300), 
       points: [
@@ -351,7 +351,7 @@ export const pages = {
         { icon: 'Sun', title: 'Day & Night Events', text: 'Equally enchanting for morning sunshine ceremonies, poolside afternoons, and starlit banquets.' }
       ]
     },
-    { type: 'cta', title: 'Experience the serenity of Dr Bhagat Farm House.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
+    { type: 'cta', title: 'Experience the serenity of Selva Tree Hotels & Resorts.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
   ],
   '/stay': [
     { type: 'head', eyebrow: 'Stay & Rooms', title: 'Comfortable rooms amidst natural greenery.', text: '2 private guest rooms, soothing atmosphere, and outdoor pool & lawn access.', image: img('dbf-stay-head', 2000, 900) },
@@ -383,7 +383,7 @@ export const pages = {
       type: 'head', 
       eyebrow: 'Weddings & Celebrations', 
       title: 'Your Dream Event: Banquet Halls & Lawns in Gurgaon.', 
-      text: 'Dreaming of the perfect event? Dr Bhagat Farm House offers unique spaces to bring it to life. Choose a sprawling lawn for open-air celebrations, or a spacious indoor hall for any occasion.', 
+      text: 'Dreaming of the perfect event? Selva Tree Hotels & Resorts offers unique spaces to bring it to life. Choose a sprawling lawn for open-air celebrations, or a spacious indoor hall for any occasion.', 
       image: img('dbf-events-head', 2000, 900) 
     },
     {
@@ -391,7 +391,7 @@ export const pages = {
       eyebrow: 'Event Spaces & Capacities',
       title: 'Versatile indoor & outdoor venues.',
       subtitle: 'Two unique spaces with pre-function areas, air-conditioned comfort, and sprawling green lawns.',
-      intro: 'Unfold your dream event at Dr Bhagat Farm House Gurgaon, one of the top wedding and celebration destinations, where every milestone becomes a lasting memory. From grand galas to productive corporate meetings, we have got you covered.',
+      intro: 'Unfold your dream event at Selva Tree Hotels & Resorts Gurgaon, one of the top wedding and celebration destinations, where every milestone becomes a lasting memory. From grand galas to productive corporate meetings, we have got you covered.',
       venues: [
         {
           name: 'The Drawing Hall & 13,000 sq. ft. Lawn',
@@ -440,7 +440,7 @@ export const pages = {
       ]
     },
     { type: 'contact' },
-    { type: 'faq', title: 'Frequently Asked Questions', subtitle: 'Everything you need to know about hosting your dream event at Dr Bhagat Farm House.', items: faq },
+    { type: 'faq', title: 'Frequently Asked Questions', subtitle: 'Everything you need to know about hosting your dream event at Selva Tree Hotels & Resorts.', items: faq },
     { type: 'cta', title: 'Let Us Plan Your Dream Celebration.', text: 'Tell us about your occasion, dates and guest count — we will take care of every detail.', cta: { label: 'Book Now', to: '/contact' } },
   ],
   '/gallery': [

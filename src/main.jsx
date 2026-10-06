@@ -6,7 +6,7 @@ import barba from '@barba/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import App from './App.jsx';
-import { pages } from './data/site';
+import { brand, pages } from './data/site';
 import './styles/global.css';
 import './styles/sections.css';
 import './styles/buttons.css';
@@ -19,7 +19,7 @@ function mount(container, href) {
   const root = createRoot(container.querySelector('#root'));
   roots.set(container, root);
   flushSync(() => root.render(<MemoryRouter initialEntries={[url.pathname + url.search + url.hash]}><App /></MemoryRouter>));
-  document.title = (url.pathname === '/' ? 'Home' : url.pathname.slice(1).replaceAll('-', ' ')) + ' | Dr Bhagat Farm House';
+  document.title = (url.pathname === '/' ? 'Home' : url.pathname.slice(1).replaceAll('-', ' ')) + ' | ' + brand.name;
 }
 async function ready(container) {
   const images = [...container.querySelectorAll('img')].filter(img => img.loading !== 'lazy');
