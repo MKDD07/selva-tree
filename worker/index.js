@@ -1,4 +1,5 @@
 import { imageQueries } from '../shared/image-queries.js';
+import { seoPages } from '../shared/seo.js';
 
 const schema = `CREATE TABLE IF NOT EXISTS image_assets (
   slot TEXT PRIMARY KEY, photo_id INTEGER NOT NULL, object_key TEXT NOT NULL,
@@ -88,8 +89,30 @@ async function credits(env) {
 
 export default {
   async fetch(request, env) {
-    const { pathname } = new URL(request.url);
-    if (!pathname.startsWith('/api/')) return env.ASSETS.fetch(request);
+    const url = new URL(request.url);
+    const { pathname } = url;
+    if (!pathname.startsWith('/api/')) {
+      if (!['GET', 'HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405 });
+      const cleanPath = pathname.replace(/\/+$/, '') || '/';
+      const alias = cleanPath === '/book-now' ? '/contact'
+        : cleanPath === '/index.html' ? '/'
+        : cleanPath.endsWith('.html') && seoPages[cleanPath.slice(0, -5)] ? cleanPath.slice(0, -5)
+        : cleanPath;
+      if (seoPages[alias] && alias !== pathname) {
+        url.pathname = alias;
+        return Response.redirect(url.href, 301);
+      }
+      if (seoPages[pathname]) {
+        url.pathname = pathname === '/' ? '/index.html' : pathname + '.html';
+        return env.ASSETS.fetch(new Request(url, request));
+      }
+      const asset = await env.ASSETS.fetch(request);
+      if (asset.status !== 404) return asset;
+      const notFound = await env.ASSETS.fetch(new Request(new URL('/404.html', request.url)));
+      return new Response(request.method === 'HEAD' ? null : notFound.body, {
+        status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' },
+      });
+    }
     if (!['GET', 'HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
     if (pathname.startsWith('/api/images/')) return image(request, env, pathname.slice('/api/images/'.length));
     if (pathname === '/api/photo-credits') {

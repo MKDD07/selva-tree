@@ -36,11 +36,11 @@ export default function HeroSection({ eyebrow, title, text, image }) {
 
   return (
     <section className="hero" ref={ref}>
-      <img className="hero__img" src={image} alt="" />
+      <img className="hero__img" src={image} alt="" fetchPriority="high" />
       <div className="hero__shade" />
       <div className="wrap hero__body">
         <p className="eyebrow eyebrow--light" data-in>{eyebrow}</p>
-        <h2 data-in>{formatTitle(title)}</h2>
+        <h1 data-in>{formatTitle(title)}</h1>
         <p className="hero__text" data-in>{text}</p>
 
         {/* A quiet, elevated booking card over the hero image. */}

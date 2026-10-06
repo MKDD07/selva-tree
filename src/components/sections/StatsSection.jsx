@@ -10,7 +10,7 @@ function Odometer({ value, suffix = '' }) {
           if (!/\d/.test(digit)) return <span key={index}>{digit}</span>;
           const steps = 20 + Number(digit);
           return <span className="stats__digit" key={index}>
-            <span className="stats__reel" data-steps={steps}>
+            <span className="stats__reel" data-steps={steps} style={{ transform: `translateY(${-100 * steps / (steps + 1)}%)` }}>
               {Array.from({ length: steps + 1 }, (_, row) => <span className="stats__digit-row" key={row}>{row % 10}</span>)}
             </span>
           </span>;

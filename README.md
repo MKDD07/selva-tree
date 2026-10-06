@@ -25,7 +25,7 @@ The checked-in `wrangler.jsonc` avoids framework auto-configuration and connects
 - Worker: `selva-tree`
 - R2 `IMAGES`: bucket `selva-tree`
 - D1 `DB`: `selva-tree-hotels-resorts`, ID `6330fcfb-45bc-4b27-9c72-416467f40450`
-- Static assets: `dist`, with SPA navigation fallback and Worker-first `/api/*` routes
+- Static assets: `dist`, with pre-rendered page HTML, Worker routing and real 404 responses
 
 Cloudflare Git build settings:
 
@@ -59,7 +59,35 @@ photos. Cached photos remain stable until their R2 object and D1 row are removed
 ## Validation
 
 ```sh
-npm test
 npm run build
+npm test
 npx wrangler deploy --dry-run
 ```
+
+## Search and AI discovery
+
+`npm run build` builds the browser bundle and renders the same React components to
+static HTML for all six canonical pages. Visitors and crawlers receive identical
+content; no bot-specific rendering is used. Animated navigation updates metadata
+from the same page definitions.
+
+`shared/seo.js` contains titles, descriptions, canonical origin, and business/page/
+breadcrumb structured data. `dist/robots.txt`, `dist/sitemap.xml` and `dist/llms.txt`
+are generated from those definitions. `/book-now` permanently redirects to
+`/contact`; unknown pages return HTTP 404 instead of an indexable home page.
+
+The canonical origin currently uses the working workers.dev host because the custom
+domain did not serve HTTPS during verification. Once `selvatreehotels.com` is
+connected and HTTPS is working, update `siteOrigin`, add a permanent redirect from
+the old host, rebuild, and submit the new sitemap to Google Search Console and Bing
+Webmaster Tools. Do not point canonical URLs at a non-working domain.
+
+The llms.txt summary is a discovery aid, not a guarantee of AI citations or search
+rankings. Keep it factual. Confirm room counts, overnight capacity and location
+before adding precise figures to structured data; the original copy contains
+conflicting counts. No unverified reviews, star classifications or prices are
+included in schema.
+
+References: [Google JavaScript SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics),
+[Bing webmaster guidelines](https://www.bing.com/webmasters/help/bing-webmaster-guidelines-30fba23a),
+[llms.txt convention](https://developer.chrome.com/docs/lighthouse/agentic-browsing/llms-txt).

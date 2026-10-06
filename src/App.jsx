@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +7,7 @@ import Lenis from 'lenis';
 import { setScrollController } from './scroll';
 
 import FloatingContact from './components/FloatingContact';
+import PageGuide from './components/PageGuide';
 import { Header, Footer } from './components/Layout';
 import { registry } from './components/Sections';
 import { pages } from './data/site';
@@ -48,7 +49,7 @@ export default function App() {
       <main ref={main}>
         {sections.map((s, i) => {
           const Section = registry[s.type];
-          return <Section key={`${pathname}-${i}`} {...s} />;
+          return <Fragment key={`${pathname}-${i}`}><Section {...s} />{i === 0 && <PageGuide pathname={pathname} />}</Fragment>;
         })}
       </main>
       <Footer />

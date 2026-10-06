@@ -7,7 +7,7 @@ export const brand = {
   tagline: 'A private retreat combining nature, sustainability, and luxury.',
   phone: '+91 98110 73959',
   whatsapp: '919811073959',
-  email: 'drbhagatfarmhouse@gmail.com',
+  email: 'booking@selvatreehotels.com',
   address: 'Selva Tree Hotels & Resorts, Sohna Rural, Gurugram, Haryana 122103',
   mapsUrl: 'https://maps.app.goo.gl/qMk8xXE67VsBXSbu6',
 };
@@ -95,7 +95,7 @@ export const faq = [
 // Each page is a list of sections. `type` picks the component in components/Sections.jsx.
 export const pages = {
   '/': [
-    { type: 'hero', eyebrow: 'Nature-inspired stays · Manesar, Gurgaon', title: 'Where the city goes quiet.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
+    { type: 'hero', eyebrow: 'Nature-inspired stays · Manesar, Gurgaon', title: 'Countryside stays & celebrations in Gurugram.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
     { 
       type: 'mosaic', 
       theme: 'rose', 
@@ -302,7 +302,7 @@ export const pages = {
     { type: 'cta', title: 'Your dates, your people, your farm.', text: 'Tell us what you are planning and we will take care of the rest.', cta: { label: 'Book Now', to: '/contact' } },
   ],
   '/about-us': [
-    { type: 'head', eyebrow: 'About Us', title: 'A breathtaking venue nestled in Gurugram, Haryana.', text: 'Established in 2005, Selva Tree Hotels & Resorts offers picturesque greenery, peaceful landscapes, and a soothing atmosphere.', image: img('dbf-about-head', 2000, 900) },
+    { type: 'head', eyebrow: 'About Us', title: 'About Selva Tree Hotels & Resorts.', text: 'Established in 2005, Selva Tree Hotels & Resorts offers picturesque greenery, peaceful landscapes, and a soothing atmosphere.', image: img('dbf-about-head', 2000, 900) },
     { 
       type: 'split', 
       eyebrow: 'Our Heritage', 
@@ -354,7 +354,7 @@ export const pages = {
     { type: 'cta', title: 'Experience the serenity of Selva Tree Hotels & Resorts.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
   ],
   '/stay': [
-    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Comfortable rooms amidst natural greenery.', text: '2 private guest rooms, soothing atmosphere, and outdoor pool & lawn access.', image: img('dbf-stay-head', 2000, 900) },
+    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '2 private guest rooms, soothing atmosphere, and outdoor pool & lawn access.', image: img('dbf-stay-head', 2000, 900) },
     { type: 'cards', eyebrow: 'Accommodations', title: 'Your countryside comfort.', variant: 'image', items: [{ title: 'Master Lawn View Room', text: 'Comfortable room overlooking open green lawns.', image: img('dbf-s1', 900, 1100) }, { title: 'Poolside Guest Room', text: 'Step right out into fresh air and private pool deck.', image: img('dbf-s2', 900, 1100) }] },
     {
       type: 'amenities',
@@ -382,7 +382,7 @@ export const pages = {
     { 
       type: 'head', 
       eyebrow: 'Weddings & Celebrations', 
-      title: 'Your Dream Event: Banquet Halls & Lawns in Gurgaon.', 
+      title: 'Wedding & event venues in Gurugram.', 
       text: 'Dreaming of the perfect event? Selva Tree Hotels & Resorts offers unique spaces to bring it to life. Choose a sprawling lawn for open-air celebrations, or a spacious indoor hall for any occasion.', 
       image: img('dbf-events-head', 2000, 900) 
     },

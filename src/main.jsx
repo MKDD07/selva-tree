@@ -6,20 +6,23 @@ import barba from '@barba/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import App from './App.jsx';
-import { brand, pages } from './data/site';
+import { pages } from './data/site';
+import { updateSeo } from './seo';
 import './styles/global.css';
 import './styles/sections.css';
 import './styles/buttons.css';
 
 const roots = new WeakMap();
 const curtain = document.getElementById('page-curtain');
+document.documentElement.dataset.loading = 'true';
+curtain.style.visibility = 'visible';
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function mount(container, href) {
   const url = new URL(href, location.origin);
   const root = createRoot(container.querySelector('#root'));
   roots.set(container, root);
   flushSync(() => root.render(<MemoryRouter initialEntries={[url.pathname + url.search + url.hash]}><App /></MemoryRouter>));
-  document.title = (url.pathname === '/' ? 'Home' : url.pathname.slice(1).replaceAll('-', ' ')) + ' | ' + brand.name;
+  updateSeo(url.pathname);
 }
 async function ready(container) {
   const images = [...container.querySelectorAll('img')].filter(img => img.loading !== 'lazy');

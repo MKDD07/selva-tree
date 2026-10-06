@@ -123,7 +123,7 @@ export default function GallerySection() {
     <section className="gallery-page">
       <div className="wrap">
         <header className="gallery-page__heading">
-          <div><p className="eyebrow">The estate, frame by frame</p><h1>Find your <em>favourite corner.</em></h1></div>
+          <div><p className="eyebrow">The estate, frame by frame</p><h1>Explore our <em>property gallery.</em></h1></div>
           <p>Explore Selva Tree Hotels & Resorts. Scroll down or select a thumbnail to discover each space.</p>
         </header>
         {farmhouses.length > 1 && (
