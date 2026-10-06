@@ -14,7 +14,11 @@ export default function CardsSection({ eyebrow, title, items = [], variant }) {
             const body = (
               <>
                 {c.image && <div className="card__img"><img src={c.image} alt={c.title} loading="lazy" /></div>}
-                {Icon && <Icon size={26} strokeWidth={1.4} />}
+                {Icon && (
+                  <div className="card__icon-wrap">
+                    <Icon size={24} strokeWidth={1.5} />
+                  </div>
+                )}
                 <div className="card__content">
                   <h3>{c.title}</h3>
                   {c.badge && <span className="card__badge">{c.badge}</span>}

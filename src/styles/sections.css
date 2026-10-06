@@ -67,16 +67,89 @@
 /* Cards */
 .cards { display: grid; gap: 28px; }
 .cards--image { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.cards--icon { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid rgba(18, 14, 12, 0.08); border-left: 1px solid rgba(18, 14, 12, 0.08); }
-.card { display: block; }
-.card__img { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(18, 14, 12, 0.06); }
-.card__img img { transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.card:hover .card__img img { transform: scale(1.07); }
-.card h3 { color: #120e0c; }
-.card p { color: #6b635c; font-size: 0.95rem; margin-top: 6px; }
-.cards--icon .card { padding: 38px 30px; border-right: 1px solid rgba(18, 14, 12, 0.08); border-bottom: 1px solid rgba(18, 14, 12, 0.08); transition: background 0.4s; }
-.cards--icon .card:hover { background: #fbf9f6; }
-.cards--icon svg { color: #120e0c; margin-bottom: 18px; }
+/* Redesigned Modern Luxury cards--icon */
+.cards--icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  border: none;
+}
+.cards--icon .card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(18, 14, 12, 0.08);
+  border-radius: 24px;
+  padding: 40px 34px;
+  box-shadow: 0 10px 30px rgba(18, 14, 12, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cards--icon .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #b58d67, #dfcbaf);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.cards--icon .card:hover {
+  transform: translateY(-5px);
+  background: #ffffff;
+  border-color: rgba(181, 141, 103, 0.3);
+  box-shadow: 0 20px 45px rgba(18, 14, 12, 0.08);
+}
+.cards--icon .card:hover::before {
+  opacity: 1;
+}
+.cards--icon .card__icon-wrap {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fbf7f2 0%, #f4ede3 100%);
+  border: 1px solid rgba(181, 141, 103, 0.25);
+  color: #9c6e45;
+  margin-bottom: 24px;
+  transition: all 0.35s ease;
+  flex-shrink: 0;
+}
+.cards--icon .card:hover .card__icon-wrap {
+  background: #120e0c;
+  color: #dfcbaf;
+  border-color: #120e0c;
+  transform: scale(1.08) rotate(-2deg);
+}
+.cards--icon .card h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #120e0c;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.cards--icon .card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #6b635c;
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .cards--icon {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cards--icon .card {
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+}
 
 /* Vertical cards list for Stay & Rooms */
 .cards--vertical {
@@ -102,7 +175,7 @@
   box-shadow: 0 16px 40px rgba(18, 14, 12, 0.07);
 }
 .cards--vertical .card__img {
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 1/1;
   width: 100%;
   margin-bottom: 0;
   border-radius: 16px;
@@ -127,7 +200,6 @@
   font-weight: 600;
   color: #15803d;
   background: #f0fdf4;
-  border: 1px solid #bbf7d0;
   padding: 4px 12px;
   border-radius: 999px;
   margin-bottom: 12px;
@@ -1319,7 +1391,6 @@
 
 
 /* Simple expandable FAQ */
-.faq-section { background: #fdfbf9; }
 .faq-section__layout { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); gap: clamp(32px, 6vw, 100px); align-items: start; }
 .faq-section__heading h2 { font-size: clamp(2rem, 3.8vw, 42px); }
 .faq-section__subtitle { color: #6b635c; margin-top: 18px; font-size: 0.98rem; }
