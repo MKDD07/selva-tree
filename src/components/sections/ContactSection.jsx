@@ -4,7 +4,7 @@ import { brand } from '../../data/site';
 import { Btn } from '../ui';
 import '../../styles/contact.css';
 
-export default function ContactSection() {
+export default function ContactSection({ compact = false }) {
   const id = useId();
   const [f, setF] = useState({ name: '', phone: '', date: '', guests: '', type: 'Stay', msg: '' });
   const set = (key) => (event) => setF({ ...f, [key]: event.target.value });
@@ -16,9 +16,9 @@ export default function ContactSection() {
     window.open('https://wa.me/' + brand.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
   };
   return (
-    <section className="contact-page" id="contact-enquiry">
+    <section className={compact ? 'contact-page contact-page--compact' : 'contact-page'} id={compact ? undefined : 'contact-enquiry'}>
       <div className="wrap contact-page__grid">
-        <div className="contact-page__copy">
+        {!compact && <div className="contact-page__copy">
           <p className="eyebrow">Good plans begin with a hello</p>
           <h2>Tell us what you<br />have <em>in mind.</em></h2>
           <p>Share your dates and a little about your plans. We will help you explore the right stay or celebration at the farm.</p>
@@ -34,7 +34,7 @@ export default function ContactSection() {
             <p>{brand.address}</p>
             <Btn href={brand.mapsUrl} target="_blank" rel="noopener noreferrer" variant="bordered" size="sm">Get directions</Btn>
           </div>
-        </div>
+        </div>}
         <form className="contact-enquiry" onSubmit={send} aria-labelledby={id + '-title'}>
           <div className="contact-enquiry__intro"><span className="eyebrow">Your visit, your way</span><h2 id={id + '-title'}>Let's make a plan.</h2><p>Fill in the details below to start your enquiry.</p></div>
           <div className="contact-enquiry__fields">

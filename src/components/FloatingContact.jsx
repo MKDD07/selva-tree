@@ -1,10 +1,13 @@
-import { Phone } from 'lucide-react';
+import { Phone, MessageSquare } from 'lucide-react';
 import { brand } from '../data/site';
 import './FloatingContact.css';
 
-export default function FloatingContact() {
+export default function FloatingContact({ onContact }) {
   return (
     <nav className="floating-contact" aria-label="Quick contact">
+      <button type="button" className="floating-contact__link floating-contact__link--contact" onClick={onContact} aria-haspopup="dialog">
+        <MessageSquare size={19} aria-hidden="true" /><span>Contact</span>
+      </button>
       <a
         className="floating-contact__link floating-contact__link--call"
         href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`}

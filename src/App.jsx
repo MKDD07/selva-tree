@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +7,7 @@ import Lenis from 'lenis';
 import { setScrollController } from './scroll';
 
 import FloatingContact from './components/FloatingContact';
+import ContactSheet from './components/ContactSheet';
 import PageGuide from './components/PageGuide';
 import { Header, Footer } from './components/Layout';
 import { registry } from './components/Sections';
@@ -15,6 +16,7 @@ import { pages } from './data/site';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function App() {
+  const [contactOpen, setContactOpen] = useState(false);
   const { pathname } = useLocation();
 
   const main = useRef(null);
@@ -45,7 +47,7 @@ export default function App() {
   return (
     <>
 
-      <Header />
+      <Header onContact={() => setContactOpen(true)} />
       <main ref={main}>
         {sections.map((s, i) => {
           const Section = registry[s.type];
@@ -53,7 +55,8 @@ export default function App() {
         })}
       </main>
       <Footer />
-      <FloatingContact />
+      <FloatingContact onContact={() => setContactOpen(true)} />
+      <ContactSheet open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }

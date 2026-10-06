@@ -24,6 +24,7 @@
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 .floating-contact__link--call { background: #2459a6; color: #fff; }
+.floating-contact__link--contact { width: auto; padding: 0 16px; gap: 8px; background: #120e0c; color: #fff; }
 .floating-contact__link--whatsapp { background: #087c43; color: #fff; }
 .floating-contact__link svg { flex-shrink: 0; }
 .floating-contact__link:focus-visible { outline: 3px solid #b58d67; outline-offset: 4px; }
