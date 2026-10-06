@@ -17,11 +17,10 @@ export default function Loader({ onDone }) {
     });
 
     tl.from('.loader__tag', { opacity: 0, y: -12, duration: 0.6, ease: 'power2.out' })
-      .from('.loader__logo-icon', { scale: 0.8, opacity: 0, duration: 0.7, ease: 'back.out(1.7)' }, '-=0.4')
-      .from('.loader__word span', { yPercent: 120, opacity: 0, duration: 0.85, stagger: 0.08, ease: 'power3.out' }, '-=0.4')
-      .fromTo('.loader__bar-fill', { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: 'power2.inOut' }, '-=0.5')
+      .from('.loader__logo-icon', { scale: 0.85, opacity: 0, duration: 0.7, ease: 'back.out(1.7)' }, '-=0.3')
+      .fromTo('.loader__bar-fill', { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: 'power2.inOut' }, '-=0.4')
       .to('.loader__logo', { y: -20, opacity: 0, duration: 0.45, ease: 'power2.in' }, '+=0.2')
-      .to('.loader__curtain', { scaleY: 0, duration: 0.9, ease: 'power4.inOut' }, '-=0.1')
+      .to('.loader__curtain', { scaleY: 0, duration: 0.8, ease: 'power4.inOut' }, '-=0.1')
       .to(root.current, { autoAlpha: 0, duration: 0.2 }, '-=0.1');
   }, { scope: root });
 

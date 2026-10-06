@@ -12,11 +12,15 @@ import { Header, Footer } from './components/Layout';
 import { registry } from './components/Sections';
 import { pages } from './data/site';
 import AdminApp from './components/admin/AdminApp';
+import Loader from './components/Loader';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+let hasShownInitialLoader = false;
+
 export default function App() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [loading, setLoading] = useState(() => !hasShownInitialLoader);
   const { pathname } = useLocation();
 
   const isAdminRoute = pathname === '/admin-login' || pathname.startsWith('/admin');
@@ -54,6 +58,14 @@ export default function App() {
 
   return (
     <>
+      {loading && (
+        <Loader
+          onDone={() => {
+            hasShownInitialLoader = true;
+            setLoading(false);
+          }}
+        />
+      )}
       <Header onContact={() => setContactOpen(true)} />
       <main ref={main}>
         {sections.map((s, i) => {
