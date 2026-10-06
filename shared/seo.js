@@ -28,8 +28,38 @@ export const seoPages = {
   },
   '/contact': {
     title: 'Contact & Booking Enquiries | Selva Tree Hotels & Resorts',
-    description: 'Contact Selva Tree Hotels & Resorts for stays and events in Sohna, Gurugram. Email booking@selvatreehotels.com or call +91 98110 73959 to enquire.',
+    description: 'Contact Selva Tree Hotels & Resorts for stays and events in Sohna, Gurugram. Contact Chandrapal at +91 72104 83929 or email booking@selvatreehotels.com to enquire.',
     label: 'Contact & booking', type: 'ContactPage',
+  },
+  '/dining': {
+    title: 'Farm-to-Table Gourmet Dining in Gurugram | Selva Tree',
+    description: 'Experience gourmet multi-cuisine dining with farm-fresh ingredients, live BBQ, and outdoor seating at Selva Tree Hotels & Resorts.',
+    label: 'Dining', type: 'WebPage',
+  },
+  '/facilities': {
+    title: 'Luxury Amenities & Facilities | Selva Tree Hotels & Resorts',
+    description: 'Enjoy private pool, 6-seater jacuzzi, expansive lawns, games area, bonfire, and 24-hour estate security in Sohna Gurugram.',
+    label: 'Facilities', type: 'WebPage',
+  },
+  '/weddings-events': {
+    title: 'Destination Weddings & Event Celebrations | Selva Tree',
+    description: 'Host dream destination weddings, receptions, and cocktail parties across 20,000+ sq. ft lawns and poolside decks at Selva Tree.',
+    label: 'Weddings & events', type: 'CollectionPage',
+  },
+  '/farmhouse-for-pool-party-in-gurgaon': {
+    title: 'Farmhouse for Pool Party in Gurgaon | Selva Tree Hotels',
+    description: 'Book a luxury private farmhouse with pool for celebrations and pool parties in Gurgaon with outside catering and music options.',
+    label: 'Pool party', type: 'ItemPage',
+  },
+  '/farmhouse-for-birthday-party-in-gurgaon': {
+    title: 'Farmhouse for Birthday Party in Gurgaon | Selva Tree',
+    description: 'Host memorable milestone birthday bashes and private gatherings with lush lawns, barbecue, and customizable decor in Gurgaon.',
+    label: 'Birthday party', type: 'ItemPage',
+  },
+  '/terms-conditions': {
+    title: 'Terms & Conditions | Selva Tree Hotels & Resorts',
+    description: 'Read the terms, reservation policies, check-in rules, and guidelines for Selva Tree Hotels & Resorts in Sohna Gurugram.',
+    label: 'Terms & conditions', type: 'WebPage',
   },
 };
 export const canonicalPath = path => path === '/book-now' ? '/contact' : path;
@@ -39,7 +69,7 @@ export function structuredData(path) {
   const url = siteOrigin + (path === '/' ? '/' : path);
   return { '@context': 'https://schema.org', '@graph': [
     { '@type': 'LodgingBusiness', '@id': siteOrigin + '/#business', name: siteName,
-      url: siteOrigin + '/', telephone: '+919811073959', email: 'booking@selvatreehotels.com',
+      url: siteOrigin + '/', telephone: '+917210483929', email: 'booking@selvatreehotels.com',
       image: siteOrigin + '/images/fallback.jpeg',
       address: { '@type': 'PostalAddress', streetAddress: 'Sohna Rural', addressLocality: 'Gurugram', addressRegion: 'Haryana', postalCode: '122103', addressCountry: 'IN' },
       hasMap: 'https://maps.app.goo.gl/qMk8xXE67VsBXSbu6',

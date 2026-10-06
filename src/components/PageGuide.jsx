@@ -5,7 +5,7 @@ const guides = {
   '/stay': ['What to confirm before booking your stay', 'Tell us your check-in and check-out dates, number of adults and children, and room preferences. Our team will confirm available rooms, overnight capacity, meal arrangements, pool access and the quoted inclusions before you book.', '/contact', 'Enquire about a stay'],
   '/events': ['Plan your venue around your occasion', 'For a wedding, birthday or corporate gathering, share your date, guest count and preferred indoor or outdoor layout. Confirm seated and standing capacity, catering, decoration, music arrangements and a weather backup with the team.', '/contact', 'Discuss your event'],
   '/gallery': ['Property photographs to help you plan', 'This gallery shows photographs from the property. Stock photographs elsewhere on the website are illustrative. Contact our team to confirm the current room setup, event layout and availability for your dates.', '/events', 'Explore event spaces'],
-  '/contact': ['How booking enquiries work', 'Email booking@selvatreehotels.com, call +91 98110 73959, or send your details using the WhatsApp enquiry form. A submitted enquiry is not a confirmed booking: the team will discuss availability, pricing and arrangements with you.', '/stay', 'Review rooms and stays'],
+  '/contact': ['How booking enquiries work', 'Email booking@selvatreehotels.com, call Chandrapal at +91 72104 83929, or send your details using the WhatsApp enquiry form. A submitted enquiry is not a confirmed booking: the team will discuss availability, pricing and arrangements with you.', '/stay', 'Review rooms and stays'],
 };
 export default function PageGuide({ pathname }) {
   const guide = guides[pathname === '/book-now' ? '/contact' : pathname];

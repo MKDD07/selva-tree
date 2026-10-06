@@ -45,6 +45,7 @@ function navigate(event) {
   if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank' || link.hasAttribute('download')) return;
   const url = new URL(link.href, location.href);
   if (url.origin !== location.origin || !pages[url.pathname]) return;
+  if (url.pathname === '/admin-login' || url.pathname.startsWith('/admin')) return;
   if (url.pathname === location.pathname && url.hash) return;
   event.preventDefault();
   event.stopPropagation();
@@ -55,7 +56,11 @@ document.addEventListener('click', navigate, true);
 barba.init({
   preventRunning: true,
   timeout: 10000,
-  prevent: ({ href }) => { const url = new URL(href, location.href); return !pages[url.pathname] || Boolean(url.hash); },
+  prevent: ({ href }) => {
+    const url = new URL(href, location.href);
+    return !pages[url.pathname] || Boolean(url.hash) || url.pathname === '/admin-login' || url.pathname.startsWith('/admin');
+  },
+
   transitions: [{
     name: 'estate-curtain',
     async once({ next }) {

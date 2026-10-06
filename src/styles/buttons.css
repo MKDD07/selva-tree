@@ -51,7 +51,7 @@
   --btn-fg: #120e0c;
   --btn-border: #ffffff;
 }
-.btn__label { overflow-wrap: anywhere; }
+.btn__label { overflow-wrap: anywhere; display: flex; gap:10px }
 .btn__icon { display: inline-flex; flex-shrink: 0; transition: transform 300ms ease; }
 .btn__icon svg { width: 18px; height: 18px; }
 .btn--sm { min-height: 44px; padding: 11px 20px; font-size: 0.76rem; gap: 8px; }

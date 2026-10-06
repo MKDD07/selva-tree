@@ -5,8 +5,9 @@ import { img } from './images';
 export const brand = {
   name: 'Selva Tree Hotels & Resorts',
   tagline: 'A private retreat combining nature, sustainability, and luxury.',
-  phone: '+91 98110 73959',
-  whatsapp: '919811073959',
+  phone: '+91 72104 83929',
+  contactPerson: 'Chandrapal',
+  whatsapp: '917210483929',
   email: 'booking@selvatreehotels.com',
   address: 'Selva Tree Hotels & Resorts, Sohna Rural, Gurugram, Haryana 122103',
   mapsUrl: 'https://maps.app.goo.gl/qMk8xXE67VsBXSbu6',
@@ -16,7 +17,9 @@ export const nav = [
   { to: '/', label: 'Home' },
   { to: '/about-us', label: 'About Us' },
   { to: '/stay', label: 'Suites' },
+  { to: '/dining', label: 'Dining' },
   { to: '/events', label: 'Events' },
+  { to: '/facilities', label: 'Facilities' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/contact', label: 'Book Now' },
 ];
@@ -141,20 +144,20 @@ export const pages = {
     {
       type: 'featureSplit',
       eyebrow: 'Explore Our Accommodations',
-      title: 'Unveiling Our Suites',
-      subtitle: 'Four distinctive suites, four unforgettable escapes.',
+      title: 'Unveiling Our Suites & Rooms',
+      subtitle: 'Seven distinctive rooms across Premium, Deluxe, and Arawali collections.',
       paragraphs: [
-        'Composed with precision, our collection thoughtfully features accommodation positioned amongst calmness and nestled amidst nature’s beauty at Selva Tree Hotels & Resorts in Manesar. In addition, three of the suites open out to the serene landscapes of the garden while also having glistening views of the pool. The suite facing the Aravalli Hills is very special, as it overlooks the grand hills and offers extraordinary views.',
-        'The property features four rooms evenly divided into two floors. Each room is carefully designed, and the architecture allows the suites to effortlessly feel cosy and be soaked with daylight. A charming bay window is also present in every suite with a bed tucked underneath — the perfect spot to bask in sunlight, lose yourself in a book, or gaze at the stars.',
-        'Thanks to our cushioned king beds crafted to offer multiple levels of comfort, we can accommodate up to 20 guests, making us ideal for gatherings for family and friends to celebrate and unwind in style.'
+        'Composed with precision, our accommodation collection thoughtfully features 7 well-appointed rooms nestled amidst nature’s beauty: 4 spacious Deluxe Rooms, 2 luxury Premium Suites, and 1 exclusive Arawali Room overlooking the grand hill vistas.',
+        'Each room is carefully designed with plush cushioned king beds, daylit windows, and modern en-suite amenities, allowing guests to effortlessly unwind in serene countryside comfort.',
+        'Whether booking an individual room or reserving the entire 7-room estate for exclusive celebrations and gatherings, we comfortably host families and groups in complete privacy and style.'
       ],
       points: [
-        'Accommodates up to 20 guests comfortably',
-        'Cushioned king beds with daylit bay window beds',
-        'Pool, lush garden & Aravalli hill views',
-        '4 luxury suites across 2 private floors'
+        '4 Deluxe Rooms (Garden & pool vistas)',
+        '2 Premium Rooms (Elevated luxury & comfort)',
+        '1 Arawali Room (Panoramic hill views)',
+        'Private estate buyout for up to 25 guests'
       ],
-      tag: 'Up to 20 Guests · 4 Suites',
+      tag: '4 Deluxe · 2 Premium · 1 Arawali',
       image: img('dbf-suites-lux', 1200, 1000),
       cta: { label: 'Explore Suites', to: '/stay' },
       flip: false,
@@ -202,7 +205,7 @@ export const pages = {
       cta: { label: 'Reserve with Dining', to: '/contact' },
       flip: false,
     },
-    { type: 'stats', items: [{ value: 2005, suffix: '', label: 'Established Year' }, { value: 200, suffix: '+', label: 'Seating Lawn Capacity' }, { value: 300, suffix: '+', label: 'Floating Guests Capacity' }, { value: 2, suffix: '', label: 'Private Guest Rooms' }] },
+    { type: 'stats', items: [{ value: 2005, suffix: '', label: 'Established Year' }, { value: 200, suffix: '+', label: 'Seating Lawn Capacity' }, { value: 300, suffix: '+', label: 'Floating Guests Capacity' }, { value: 7, suffix: '', label: 'Private Guest Rooms' }] },
     {
       type: 'amenities',
       title: 'Amenities & Policies',
@@ -212,7 +215,7 @@ export const pages = {
         { iconKey: 'jacuzzi', label: '6-Seater Jacuzzi' },
         { iconKey: 'spacious-outdoor-lawn', label: 'Spacious Outdoor Lawn' },
         { iconKey: 'sufficient-car-parking', label: 'Sufficient Car Parking' },
-        { iconKey: '2-private-guest-rooms', label: '2 Private Guest Rooms' },
+        { iconKey: '2-private-guest-rooms', label: '7 Private Guest Rooms' },
         { iconKey: 'table-tennis', label: 'Table Tennis & Games' },
         { iconKey: 'childrens-play-area', label: "Children's Play Area" },
         { iconKey: 'trampoline', label: 'Trampoline' },
@@ -354,8 +357,12 @@ export const pages = {
     { type: 'cta', title: 'Experience the serenity of Selva Tree Hotels & Resorts.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
   ],
   '/stay': [
-    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '2 private guest rooms, soothing atmosphere, and outdoor pool & lawn access.', image: img('dbf-stay-head', 2000, 900) },
-    { type: 'cards', eyebrow: 'Accommodations', title: 'Your countryside comfort.', variant: 'image', items: [{ title: 'Master Lawn View Room', text: 'Comfortable room overlooking open green lawns.', image: img('dbf-s1', 900, 1100) }, { title: 'Poolside Guest Room', text: 'Step right out into fresh air and private pool deck.', image: img('dbf-s2', 900, 1100) }] },
+    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '7 curated private guest rooms across Deluxe, Premium, and Arawali suites with pool and lawn access.', image: img('dbf-stay-head', 2000, 900) },
+    { type: 'cards', eyebrow: 'Accommodations', title: 'Your countryside comfort.', variant: 'image', items: [
+      { title: 'Deluxe Rooms (4 Rooms)', text: 'Ground and first floor rooms with serene garden views, plush king beds, and rain shower.', image: img('dbf-s1', 900, 1100) },
+      { title: 'Premium Suites (2 Rooms)', text: 'Elevated luxury suites featuring artisan furnishings, private patio, and pool deck access.', image: img('dbf-s2', 900, 1100) },
+      { title: 'Arawali Room (1 Room)', text: 'Exclusive scenic room offering picturesque panoramas of the rolling Arawali hills.', image: img('dbf-suites-lux', 900, 1100) }
+    ] },
     {
       type: 'amenities',
       title: 'Amenities & Inclusions',
@@ -365,7 +372,7 @@ export const pages = {
         { iconKey: 'jacuzzi', label: '6-Seater Jacuzzi' },
         { iconKey: 'expansive-lawn', label: 'Spacious Outdoor Lawn' },
         { iconKey: 'sufficient-car-parking', label: 'Sufficient Car Parking' },
-        { iconKey: '2-private-rooms', label: '2 Private Guest Rooms' },
+        { iconKey: '2-private-rooms', label: '7 Private Guest Rooms (4 Deluxe, 2 Premium, 1 Arawali)' },
         { iconKey: 'table-tennis', label: 'Table Tennis' },
         { iconKey: 'childrens-play-area', label: "Children's Play Area" },
         { iconKey: 'trampoline', label: 'Trampoline' },
@@ -457,5 +464,194 @@ export const pages = {
     { type: 'contact' },
     { type: 'map' },
     { type: 'faq', title: 'Quick answers', items: faq },
+  ],
+  '/dining': [
+    {
+      type: 'head',
+      eyebrow: 'Farm-to-Table Experience',
+      title: 'Curated gourmet dining in nature.',
+      text: 'Indulge in fresh multi-cuisine delicacies, live outdoor barbecue, and candlelit garden dinners crafted by our private culinary team.',
+      image: img('dbf-dining-head', 2000, 900),
+    },
+    {
+      type: 'featureSplit',
+      eyebrow: 'Chef-Crafted Flavors',
+      title: 'Healing cuisine made with care.',
+      subtitle: 'Indian, Continental, and Oriental favorites prepared with fresh local ingredients.',
+      paragraphs: [
+        'At Selva Tree Hotels & Resorts, every meal is an immersive escape. Our dedicated Food and Beverages manager and executive chefs craft wholesome meals tailored to your taste buds and dietary needs.',
+        'Choose from expansive breakfast spreads by the pool, live outdoor barbecue counters beneath the night sky, or lavish buffet spreads on our manicured event lawns.'
+      ],
+      points: [
+        'Farm-fresh ingredients and organic spices',
+        'Live barbecue & bonfire grilling sessions',
+        'Private poolside candlelit dinner set-ups',
+        'Custom multi-course menus for events'
+      ],
+      tag: 'Gourmet Dining',
+      image: img('dbf-dining-gourmet', 1200, 1000),
+      cta: { label: 'Book with Dining', to: '/contact' },
+      flip: false,
+    },
+    { type: 'contact' },
+    { type: 'faq', title: 'Dining Questions', items: faq },
+  ],
+  '/facilities': [
+    {
+      type: 'head',
+      eyebrow: 'Estate Amenities',
+      title: 'World-class facilities in Sohna.',
+      text: 'From a crystal-clear swimming pool and 6-seater jacuzzi to expansive sports lawns and secure parking, experience uncompromised luxury.',
+      image: img('dbf-facilities-head', 2000, 900),
+    },
+    {
+      type: 'amenities',
+      title: 'Estate Amenities & Leisure',
+      theme: 'sand',
+      items: [
+        { iconKey: 'swimming-pool', label: 'Private Swimming Pool' },
+        { iconKey: 'jacuzzi', label: '6-Seater Heated Jacuzzi' },
+        { iconKey: 'spacious-outdoor-lawn', label: '20,000+ sq. ft Lush Lawns' },
+        { iconKey: 'sufficient-car-parking', label: 'Valet & Ample Parking' },
+        { iconKey: 'table-tennis', label: 'Table Tennis & Sports Arena' },
+        { iconKey: 'childrens-play-area', label: "Children's Adventure Play Area" },
+        { iconKey: 'trampoline', label: 'Full-Size Trampoline' },
+        { iconKey: 'bonfire-bbq', label: 'Bonfire & Live BBQ Pit' },
+        { iconKey: 'inhouse-outside-dj', label: 'High-Power DJ & Sound Setup' },
+        { iconKey: 'pet-friendly-estate', label: '100% Pet-Friendly Grounds' },
+        { iconKey: '24-hour-security', label: '24x7 Gated Security & Staff' },
+      ]
+    },
+    { type: 'contact' },
+    { type: 'faq', title: 'Facility FAQs', items: faq },
+  ],
+  '/weddings-events': [
+    {
+      type: 'head',
+      eyebrow: 'Weddings & Celebrations',
+      title: 'Grand destination weddings in Gurgaon.',
+      text: 'Exchange vows under star-lit skies on over 20,000 sq. ft. of emerald lawns, complemented by air-conditioned banquet halls and boutique suites.',
+      image: img('dbf-weddings-head', 2000, 900),
+    },
+    {
+      type: 'eventShowcase',
+      theme: 'sand',
+      title: 'Celebration Venues for Every Occasion',
+      text: 'From Mehndi and Haldi celebrations to starlit receptions and grand anniversary galas.',
+      items: [
+        {
+          title: 'Royal Wedding Lawns',
+          text: 'Expansive lush green outdoor lawns hosting up to 200 seating and 400 floating guests with customized decor and catering.',
+          badge: 'Up to 400 guests',
+          image: img('dbf-event-wedding', 600, 600),
+        },
+        {
+          title: 'Cocktail & Sangeet Evenings',
+          text: 'Illuminated poolside deck with professional JBL sound system, DJ facilities, and ambient garden lighting.',
+          badge: 'Party ready',
+          image: img('dbf-party', 600, 600),
+        },
+        {
+          title: 'Corporate Galas & Offsites',
+          text: 'Peaceful countryside ambiance combined with modern presentation facilities, Wi-Fi, and executive catering.',
+          badge: 'Complete privacy',
+          image: img('dbf-event-retreat', 600, 600),
+        },
+      ]
+    },
+    { type: 'contact' },
+    { type: 'faq', title: 'Wedding & Event Inquiries', items: faq },
+  ],
+  '/farmhouse-for-pool-party-in-gurgaon': [
+    {
+      type: 'head',
+      eyebrow: 'Poolside Celebrations',
+      title: 'Farmhouse for pool party in Gurgaon.',
+      text: 'Host the ultimate sun-soaked pool party at Selva Tree. Crystal clear pool, sun loungers, outdoor bar counter, and booming audio setup.',
+      image: img('dbf-pool-party-head', 2000, 900),
+    },
+    {
+      type: 'featureSplit',
+      eyebrow: 'Private Pool Retreat',
+      title: 'Make a splash with your inner circle.',
+      subtitle: 'Exclusive pool access, jacuzzi, and private lawn for groups of up to 50 guests.',
+      paragraphs: [
+        'Looking for the top farmhouse with pool in Gurgaon? Selva Tree Hotels & Resorts gives you private, undisturbed access to our pool deck, shaded cabanas, and manicured lawns.',
+        'Play your favorite tracks on our JBL party box, fire up the barbecue grill, and sip cool drinks as the sun sets over the Aravalli hills.'
+      ],
+      points: [
+        'Crystal blue pool with illuminated deck',
+        '6-seater jacuzzi and sun loungers',
+        'Outside catering and outside beverages permitted',
+        'Overnight luxury stay suites available'
+      ],
+      tag: 'Top Pool Venue',
+      image: img('dbf-luxury-pool', 1200, 1000),
+      cta: { label: 'Book Pool Party', to: '/contact' },
+      flip: true,
+    },
+    { type: 'contact' },
+    { type: 'faq', title: 'Pool Party FAQs', items: faq },
+  ],
+  '/farmhouse-for-birthday-party-in-gurgaon': [
+    {
+      type: 'head',
+      eyebrow: 'Birthday Parties & Milestones',
+      title: 'Farmhouse for birthday party in Gurgaon.',
+      text: 'Celebrate birthdays in style with open-air lawns, personalized themed decor, DJ sound systems, and bonfire evenings in Sohna.',
+      image: img('dbf-birthday-head', 2000, 900),
+    },
+    {
+      type: 'featureSplit',
+      eyebrow: 'Unforgettable Birthdays',
+      title: 'Turn another year older, surrounded by nature.',
+      subtitle: 'Spacious lawns, trampoline, indoor drawing room, and delicious live catering.',
+      paragraphs: [
+        'Whether planning a first birthday celebration, an 18th milestone bash, or a golden jubilee gathering, Selva Tree offers flexible indoor-outdoor party spaces in Gurgaon.',
+        'Enjoy total freedom with decoration, music, and food choices while our on-site team ensures seamless hospitality from arrival to checkout.'
+      ],
+      points: [
+        'Lush lawn setup with trampoline and kids play zone',
+        'DJ setup and dance floor arrangements',
+        'Choice of in-house chef catering or outside catering',
+        'Ample parking for all your attending guests'
+      ],
+      tag: 'Birthday Destination',
+      image: img('dbf-event-birthday', 1200, 1000),
+      cta: { label: 'Plan Birthday Bash', to: '/contact' },
+      flip: false,
+    },
+    { type: 'contact' },
+    { type: 'faq', title: 'Birthday Party FAQs', items: faq },
+  ],
+  '/terms-conditions': [
+    {
+      type: 'head',
+      eyebrow: 'Guest Guidelines',
+      title: 'Terms & conditions.',
+      text: 'Review our booking policies, check-in requirements, and guidelines designed to ensure a safe, peaceful stay for all guests.',
+      image: img('dbf-policy-head', 2000, 900),
+    },
+    {
+      type: 'split',
+      eyebrow: 'Policies & Rules',
+      title: 'Fair and transparent terms.',
+      paragraphs: [
+        'Standard check-in time is 2:00 PM and check-out time is 11:00 AM. Early check-in or late check-out is subject to room availability and prior arrangement.',
+        'A valid government-issued photo ID (Aadhaar, Passport, or Driving License) is mandatory for all adult guests at the time of check-in.',
+        'Reservations are confirmed upon payment of the advance deposit. Cancellation requests made more than 7 days prior to arrival are eligible for full credit towards future dates.',
+        'Selva Tree Hotels & Resorts maintains a peaceful environment. While celebrations are welcomed, we observe outdoor sound restrictions after 10:00 PM in accordance with local regulations.'
+      ],
+      points: [
+        'Standard Check-in: 2:00 PM | Check-out: 11:00 AM',
+        'Government photo ID required for all staying guests',
+        'Advance deposit required for reservation confirmation',
+        'Pet-friendly estate: please keep pets supervised'
+      ],
+      tag: 'Guest Policy',
+      image: img('dbf-story', 1200, 1000),
+      flip: true,
+    },
+    { type: 'faq', title: 'Common Policy Questions', items: faq },
   ],
 };

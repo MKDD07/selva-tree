@@ -12,7 +12,6 @@
 .mobile-menu__number { font-family: var(--sans); font-size: 10px; letter-spacing: .1em; color: #8c8176; }
 .mobile-menu__bottom { padding-top: 22px; }
 .mobile-menu__bottom p { font-family: var(--serif); font-style: italic; margin-bottom: 16px; color: #736353; }
-.mobile-menu__bottom button { display: flex; align-items: center; justify-content: space-between; width: 100%; background: #120e0c; color: #fff; padding: 16px 20px; border-radius: 8px; }
 .mobile-menu__bottom > a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px 0 0; font-size: .85rem; }
 .mobile-menu :focus-visible, .header__mobile-actions :focus-visible { outline: 2px solid #9c704b; outline-offset: 4px; }
 @keyframes menu-enter { from { transform: translateX(100%); } to { transform: translateX(0); } }

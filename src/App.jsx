@@ -8,10 +8,10 @@ import { setScrollController } from './scroll';
 
 import FloatingContact from './components/FloatingContact';
 import ContactSheet from './components/ContactSheet';
-import PageGuide from './components/PageGuide';
 import { Header, Footer } from './components/Layout';
 import { registry } from './components/Sections';
 import { pages } from './data/site';
+import AdminApp from './components/admin/AdminApp';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -19,10 +19,13 @@ export default function App() {
   const [contactOpen, setContactOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const isAdminRoute = pathname === '/admin-login' || pathname.startsWith('/admin');
+
   const main = useRef(null);
   const sections = pages[pathname] || pages['/'];
 
   useEffect(() => {
+    if (isAdminRoute) return;
     const lenis = new Lenis({ lerp: 0.09 });
     setScrollController(lenis);
     lenis.on('scroll', ScrollTrigger.update);
@@ -30,11 +33,12 @@ export default function App() {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
     return () => { setScrollController(null); gsap.ticker.remove(tick); lenis.destroy(); };
-  }, []);
+  }, [isAdminRoute]);
 
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
 
   useGSAP(() => {
+    if (isAdminRoute) return;
     gsap.utils.toArray('[data-reveal]').forEach((el) =>
       gsap.from(el, { y: 44, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } })
     );
@@ -42,16 +46,19 @@ export default function App() {
       gsap.fromTo(el, { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: el.parentElement, scrub: true } })
     );
     ScrollTrigger.refresh();
-  }, { scope: main, dependencies: [pathname] });
+  }, { scope: main, dependencies: [pathname, isAdminRoute] });
+
+  if (isAdminRoute) {
+    return <AdminApp />;
+  }
 
   return (
     <>
-
       <Header onContact={() => setContactOpen(true)} />
       <main ref={main}>
         {sections.map((s, i) => {
           const Section = registry[s.type];
-          return <Fragment key={`${pathname}-${i}`}><Section {...s} />{i === 0 && <PageGuide pathname={pathname} />}</Fragment>;
+          return <Section key={`${pathname}-${i}`} {...s} />;
         })}
       </main>
       <Footer />
@@ -60,3 +67,5 @@ export default function App() {
     </>
   );
 }
+
+

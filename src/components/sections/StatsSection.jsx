@@ -10,7 +10,7 @@ function Odometer({ value, suffix = '' }) {
           if (!/\d/.test(digit)) return <span key={index}>{digit}</span>;
           const steps = 20 + Number(digit);
           return <span className="stats__digit" key={index}>
-            <span className="stats__reel" data-steps={steps} style={{ transform: `translateY(${-100 * steps / (steps + 1)}%)` }}>
+            <span className="stats__reel" data-steps={steps}>
               {Array.from({ length: steps + 1 }, (_, row) => <span className="stats__digit-row" key={row}>{row % 10}</span>)}
             </span>
           </span>;
@@ -29,19 +29,29 @@ export default function StatsSection({ items = [] }) {
       const reels = gsap.utils.toArray('.stats__reel', ref.current);
       const finalPosition = (_, element) => {
         const steps = Number(element.dataset.steps);
-        return -100 * steps / (steps + 1);
+        // Translate by -(steps * 100 / (steps + 1))% so the last digit (steps % 10) is perfectly centered
+        return -((steps / (steps + 1)) * 100);
       };
       if (context.conditions.reduced) {
-        gsap.set(reels, { yPercent: finalPosition });
+        reels.forEach(el => {
+          const steps = Number(el.dataset.steps);
+          el.style.transform = `translateY(-${(steps / (steps + 1)) * 100}%)`;
+        });
         return;
       }
-      gsap.fromTo(reels, { yPercent: 0 }, {
-        yPercent: finalPosition, duration: 2.4, stagger: 0.09, ease: 'power3.inOut',
-        scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo(reels, 
+        { yPercent: 0 }, 
+        {
+          yPercent: finalPosition,
+          duration: 2.2,
+          stagger: 0.08,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: ref.current, start: 'top 85%', once: true },
+        }
+      );
       gsap.from('.stats__item', {
-        y: 20, opacity: 0, duration: 0.7, stagger: 0.12,
-        scrollTrigger: { trigger: ref.current, start: 'top 80%', once: true },
+        y: 20, opacity: 0, duration: 0.7, stagger: 0.1,
+        scrollTrigger: { trigger: ref.current, start: 'top 85%', once: true },
       });
     });
     return () => media.revert();

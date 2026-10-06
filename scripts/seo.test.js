@@ -14,7 +14,6 @@ test('every indexable page contains readable HTML and unique complete metadata',
     assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
     assert.ok(html.includes(`href="${siteOrigin}${path}"`));
     assert.ok(html.includes('booking@selvatreehotels.com'));
-    assert.ok(html.includes('class="page-guide wrap"'));
     assert.ok(!html.includes('<div id="root"></div>'));
     assert.ok(!html.includes('<html lang="en" data-loading'));
     const title = html.match(/<title>(.*?)<\/title>/)[1];
@@ -30,7 +29,7 @@ test('every indexable page contains readable HTML and unique complete metadata',
 
 test('discovery files list only canonical pages', async () => {
   const sitemap = await readFile('dist/sitemap.xml', 'utf8');
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 6);
+  assert.equal((sitemap.match(/<loc>/g) || []).length, Object.keys(seoPages).length);
   assert.ok(!sitemap.includes('book-now'));
   assert.ok((await readFile('dist/robots.txt', 'utf8')).includes(`${siteOrigin}/sitemap.xml`));
   const summary = await readFile('dist/llms.txt', 'utf8');

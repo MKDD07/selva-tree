@@ -26,4 +26,10 @@ export const imageQueries = {
   'dbf-l1': 'garden wedding lawn',
   'dbf-p1': 'villa swimming pool',
   'dbf-c2': 'banquet hall',
+  'dbf-dining-head': 'luxury restaurant terrace',
+  'dbf-facilities-head': 'resort swimming pool amenities',
+  'dbf-birthday-head': 'garden birthday party celebration',
+  'dbf-weddings-head': 'royal indian wedding decoration',
+  'dbf-pool-party-head': 'villa pool party summer',
+  'dbf-policy-head': 'luxury hotel lounge',
 };

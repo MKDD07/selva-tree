@@ -23,7 +23,7 @@ export default function ContactSection({ compact = false }) {
           <h2>Tell us what you<br />have <em>in mind.</em></h2>
           <p>Share your dates and a little about your plans. We will help you explore the right stay or celebration at the farm.</p>
           <div className="contact-page__channels">
-            <a href={'tel:' + brand.phone.replace(/[^+\d]/g, '')}><span className="contact-page__icon"><Phone size={20} aria-hidden="true" /></span><span><small>Give us a call</small><strong>{brand.phone}</strong></span><ArrowUpRight size={18} aria-hidden="true" /></a>
+            <a href={'tel:' + brand.phone.replace(/[^+\d]/g, '')}><span className="contact-page__icon"><Phone size={20} aria-hidden="true" /></span><span><small>Call Chandrapal</small><strong>{brand.phone}</strong></span><ArrowUpRight size={18} aria-hidden="true" /></a>
             <a href={'mailto:' + brand.email}><span className="contact-page__icon"><Mail size={20} aria-hidden="true" /></span><span><small>Write to us</small><strong>{brand.email}</strong></span><ArrowUpRight size={18} aria-hidden="true" /></a>
             <a href={'https://wa.me/' + brand.whatsapp} target="_blank" rel="noopener noreferrer"><span className="contact-page__icon"><MessageCircle size={20} aria-hidden="true" /></span><span><small>Prefer a quick chat?</small><strong>Connect on WhatsApp</strong></span><ArrowUpRight size={18} aria-hidden="true" /></a>
           </div>

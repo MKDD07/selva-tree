@@ -1,5 +1,6 @@
 import { imageQueries } from '../shared/image-queries.js';
 import { seoPages } from '../shared/seo.js';
+import { handleBookingApi } from './booking-api.js';
 
 const schema = `CREATE TABLE IF NOT EXISTS image_assets (
   slot TEXT PRIMARY KEY, photo_id INTEGER NOT NULL, object_key TEXT NOT NULL,
@@ -91,9 +92,22 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const { pathname } = url;
+
+    // Handle Admin & Public Booking / Availability APIs
+    if (pathname.startsWith('/api/admin/') || pathname.startsWith('/api/availability') || pathname === '/api/inquiries') {
+      return handleBookingApi(request, env);
+    }
+
     if (!pathname.startsWith('/api/')) {
       if (!['GET', 'HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405 });
       const cleanPath = pathname.replace(/\/+$/, '') || '/';
+
+      // Serve SPA index for admin dashboard routes
+      if (cleanPath === '/admin-login' || cleanPath.startsWith('/admin')) {
+        url.pathname = '/index.html';
+        return env.ASSETS.fetch(new Request(url, request));
+      }
+
       const alias = cleanPath === '/book-now' ? '/contact'
         : cleanPath === '/index.html' ? '/'
         : cleanPath.endsWith('.html') && seoPages[cleanPath.slice(0, -5)] ? cleanPath.slice(0, -5)
@@ -113,6 +127,7 @@ export default {
         status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' },
       });
     }
+
     if (!['GET', 'HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
     if (pathname.startsWith('/api/images/')) return image(request, env, pathname.slice('/api/images/'.length));
     if (pathname === '/api/photo-credits') {
@@ -122,3 +137,4 @@ export default {
     return new Response('Not found', { status: 404 });
   },
 };
+
