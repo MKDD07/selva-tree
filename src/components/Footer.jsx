@@ -74,7 +74,7 @@ export default function Footer() {
 
           <div className="footer__bottom">
             <p>&copy; {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
-            <span>Room to unwind. Space to celebrate.</span>
+            <a href="/api/photo-credits">Photo credits / Pexels</a>
           </div>
         </div>
       </div>

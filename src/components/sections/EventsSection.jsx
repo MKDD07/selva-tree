@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Btn } from '../ui';
 import '../../styles/events.css';
 
-const img = seed => `https://picsum.photos/seed/${seed}/1600/1100`;
+import { img } from '../../data/images';
 const occasions = [
   ['Weddings & traditions', 'dbf-wed', 'From a colourful mehendi to an evening reception. Bring the family together with room for every moment.', 'Haldi / Mehendi / Roka / Reception'],
   ['Private celebrations', 'dbf-party', 'A milestone birthday, an anniversary dinner or a reunion by the pool. Make the occasion your own.', 'Birthdays / Anniversaries / Reunions'],

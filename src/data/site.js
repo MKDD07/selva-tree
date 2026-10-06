@@ -1,6 +1,6 @@
 // ALL CONTENT LIVES HERE. Edit values; layout stays untouched.
 // Replace img() with your real photos, e.g. '/photos/pool.jpg' (put files in /public/photos).
-const img = (seed, w = 1400, h = 900) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
+import { img } from './images';
 
 export const brand = {
   name: 'Dr Bhagat Farm House',
