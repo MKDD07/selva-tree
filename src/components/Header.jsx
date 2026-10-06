@@ -1,6 +1,6 @@
-﻿import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Phone } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, Mail, MessageCircle, MapPin, Instagram, Facebook } from 'lucide-react';
 import { brand, nav } from '../data/site';
 import logoDark from '../assets/logo/logo-dark.svg';
 import { Btn } from './ui';
@@ -38,7 +38,87 @@ export default function Header({ onContact }) {
     <OverlayDialog open={open} onClose={() => setOpen(false)} className="mobile-menu" labelledBy="mobile-menu-title">
       <div className="mobile-menu__top"><span id="mobile-menu-title">Explore Selva Tree</span><button type="button" onClick={() => setOpen(false)} aria-label="Close navigation menu" autoFocus><X size={22} /></button></div>
       <nav aria-label="Mobile navigation">{nav.map((n, i) => <NavLink key={n.to} to={n.to} end onClick={() => setOpen(false)}><span>{n.label}</span><ArrowUpRight size={20} aria-hidden="true" /></NavLink>)}</nav>
-      <div className="mobile-menu__bottom"><p>A little closer to nature.</p><button className='btn btn--solid btn--md' type="button" onClick={contact}>Plan your visit <ArrowUpRight size={18} /></button><a href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`}><Phone size={15} />{brand.phone}</a></div>
+      <div className="mobile-menu__bottom">
+        <p className="mobile-menu__tagline">A little closer to nature.</p>
+        
+        {/* Action row with Plan your visit and 2 quick-action icons: Mail and Phone */}
+        <div className="mobile-menu__actions-row">
+          <button className="btn btn--solid btn--md mobile-menu__plan-btn" type="button" onClick={contact}>
+            Plan your visit <ArrowUpRight size={17} aria-hidden="true" />
+          </button>
+          <a
+            href={`mailto:${brand.email}`}
+            className="mobile-menu__icon-btn"
+            aria-label="Email Selva Tree"
+            title="Email us"
+          >
+            <Mail size={19} aria-hidden="true" />
+          </a>
+          <a
+            href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`}
+            className="mobile-menu__icon-btn"
+            aria-label={`Call ${brand.phone}`}
+            title="Call us"
+          >
+            <Phone size={19} aria-hidden="true" />
+          </a>
+        </div>
+
+        {/* Contact info banner */}
+        <div className="mobile-menu__contact-info">
+          <a href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`} className="mobile-menu__phone-link">
+            <span className="mobile-menu__contact-label">Call Chandrapal:</span>
+            <strong>{brand.phone}</strong>
+          </a>
+        </div>
+
+        {/* Social media and quick links row */}
+        <div className="mobile-menu__socials">
+          <span className="mobile-menu__socials-label">Follow & Connect</span>
+          <div className="mobile-menu__social-links">
+            <a
+              href={`https://wa.me/${brand.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="mobile-menu__social-link"
+              title="WhatsApp"
+            >
+              <MessageCircle size={18} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Instagram"
+              className="mobile-menu__social-link"
+              title="Instagram"
+            >
+              <Instagram size={18} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Facebook"
+              className="mobile-menu__social-link"
+              title="Facebook"
+            >
+              <Facebook size={18} aria-hidden="true" />
+            </a>
+            <a
+              href={brand.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on Google Maps"
+              className="mobile-menu__social-link"
+              title="Google Maps"
+            >
+              <MapPin size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
     </OverlayDialog>
   </>;
 }
