@@ -197,7 +197,7 @@ h1 em, h2 em, h3 em, h4 em, .h-accent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px var(--pad);
+  padding: 12px var(--pad);
   color: var(--ink);
   transition: padding 0.3s ease;
 }
