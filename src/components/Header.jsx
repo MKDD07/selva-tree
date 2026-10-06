@@ -36,7 +36,12 @@ export default function Header({ onContact }) {
       </div>
     </header>
     <OverlayDialog open={open} onClose={() => setOpen(false)} className="mobile-menu" labelledBy="mobile-menu-title">
-      <div className="mobile-menu__top"><span id="mobile-menu-title">Explore Selva Tree</span><button type="button" onClick={() => setOpen(false)} aria-label="Close navigation menu" autoFocus><X size={22} /></button></div>
+      <div className="mobile-menu__top">
+        <Link to="/" onClick={() => setOpen(false)} className="mobile-menu__logo-link" id="mobile-menu-title" aria-label={brand.name}>
+          <img src={logoDark} alt={brand.name} className="mobile-menu__logo-img" />
+        </Link>
+        <button type="button" onClick={() => setOpen(false)} aria-label="Close navigation menu" autoFocus><X size={22} /></button>
+      </div>
       <nav aria-label="Mobile navigation">{nav.map((n, i) => <NavLink key={n.to} to={n.to} end onClick={() => setOpen(false)}><span>{n.label}</span><ArrowUpRight size={20} aria-hidden="true" /></NavLink>)}</nav>
       <div className="mobile-menu__bottom">
         <p className="mobile-menu__tagline">A little closer to nature.</p>
@@ -61,14 +66,6 @@ export default function Header({ onContact }) {
             title="Call us"
           >
             <Phone size={19} aria-hidden="true" />
-          </a>
-        </div>
-
-        {/* Contact info banner */}
-        <div className="mobile-menu__contact-info">
-          <a href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`} className="mobile-menu__phone-link">
-            <span className="mobile-menu__contact-label">Call Chandrapal:</span>
-            <strong>{brand.phone}</strong>
           </a>
         </div>
 
