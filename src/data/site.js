@@ -357,11 +357,53 @@ export const pages = {
     { type: 'cta', title: 'Experience the serenity of Selva Tree Hotels & Resorts.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
   ],
   '/stay': [
-    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '7 curated private guest rooms across Deluxe, Premium, and Arawali suites with pool and lawn access.', image: img('dbf-stay-head', 2000, 900) },
-    { type: 'cards', eyebrow: 'Accommodations', title: 'Your countryside comfort.', variant: 'image', items: [
-      { title: 'Deluxe Rooms (4 Rooms)', text: 'Ground and first floor rooms with serene garden views, plush king beds, and rain shower.', image: img('dbf-s1', 900, 1100) },
-      { title: 'Premium Suites (2 Rooms)', text: 'Elevated luxury suites featuring artisan furnishings, private patio, and pool deck access.', image: img('dbf-s2', 900, 1100) },
-      { title: 'Arawali Room (1 Room)', text: 'Exclusive scenic room offering picturesque panoramas of the rolling Arawali hills.', image: img('dbf-suites-lux', 900, 1100) }
+    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '7 curated private guest rooms across Deluxe, Premium, and Arawali collections with pool and lawn access.', image: img('dbf-stay-head', 2000, 900) },
+    { type: 'cards', eyebrow: 'Accommodations', title: 'Our Private Suites & Rooms', variant: 'vertical', items: [
+      {
+        title: 'Deluxe Rooms',
+        badge: '4 Rooms Available · Up to 8-12 Guests',
+        text: 'Surrounded by serene landscaped gardens, our 4 Deluxe Rooms feature generous floor plans bathed in warm sunlight, tailored for peaceful countryside relaxation.',
+        points: [
+          'Plush King-size bedding with premium linens',
+          'Spacious private ensuite with rainfall shower',
+          'Garden & swimming pool direct viewpoints',
+          'High-speed Wi-Fi, smart air conditioning & tea/coffee maker',
+          'Dedicated work desk and vanity area',
+          'Access to pool deck, jacuzzi & estate lawn'
+        ],
+        image: img('dbf-s1', 900, 1100),
+        cta: { label: 'Enquire for Deluxe Room', to: '/contact' }
+      },
+      {
+        title: 'Premium Suites',
+        badge: '2 Rooms Available · Up to 4-6 Guests',
+        text: 'Elevated luxury retreats boasting artisan-crafted interiors, an outdoor sun patio, and direct access to poolside leisure with refined touches.',
+        points: [
+          'Master King Bed with luxury pillow-top mattress',
+          'Private terrace / patio opening to pool vistas',
+          'Deluxe bathroom with premium organic bath toiletries',
+          'In-room mini bar and espresso coffee maker',
+          'Smart television and complimentary high-speed internet',
+          'Personalized butler service upon advance request'
+        ],
+        image: img('dbf-s2', 900, 1100),
+        cta: { label: 'Enquire for Premium Suite', to: '/contact' }
+      },
+      {
+        title: 'Arawali Scenic Room',
+        badge: '1 Exclusive Suite · Up to 2-4 Guests',
+        text: 'Our signature hilltop-facing room featuring breathtaking panoramic views of the Arawali hills, serene morning sunrises, and tranquil privacy.',
+        points: [
+          'Panoramic floor-to-ceiling Arawali hill views',
+          'Daylit bay window nook perfect for reading or star gazing',
+          'King-size handcrafted teakwood bed',
+          'Italian marble bath with designer fixtures',
+          'Curated artwork and heritage aesthetic touches',
+          'Complimentary morning breakfast & estate walkthrough'
+        ],
+        image: img('dbf-suites-lux', 900, 1100),
+        cta: { label: 'Enquire for Arawali Room', to: '/contact' }
+      }
     ] },
     {
       type: 'amenities',
@@ -446,7 +488,6 @@ export const pages = {
         }
       ]
     },
-    { type: 'contact' },
     { type: 'faq', title: 'Frequently Asked Questions', subtitle: 'Everything you need to know about hosting your dream event at Selva Tree Hotels & Resorts.', items: faq },
     { type: 'cta', title: 'Let Us Plan Your Dream Celebration.', text: 'Tell us about your occasion, dates and guest count — we will take care of every detail.', cta: { label: 'Book Now', to: '/contact' } },
   ],
