@@ -14,8 +14,14 @@ import './styles/buttons.css';
 
 const roots = new WeakMap();
 const curtain = document.getElementById('page-curtain');
-document.documentElement.dataset.loading = 'true';
-curtain.style.visibility = 'visible';
+const isIndexPage = location.pathname === '/' || location.pathname === '/index.html';
+
+if (!isIndexPage) {
+  document.documentElement.dataset.loading = 'true';
+  curtain.style.visibility = 'visible';
+} else {
+  curtain.style.visibility = 'hidden';
+}
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function mount(container, href) {
   const url = new URL(href, location.origin);
@@ -65,8 +71,15 @@ barba.init({
     name: 'estate-curtain',
     async once({ next }) {
       mount(next.container, location.href);
-      next.container.inert = true;
-      await reveal(next.container, true);
+      if (isIndexPage) {
+        next.container.inert = false;
+        // Index page has its own dedicated luxury loader screen; Barba does not double-animate curtain
+        await ready(next.container);
+        ScrollTrigger.refresh();
+      } else {
+        next.container.inert = true;
+        await reveal(next.container, true);
+      }
     },
     async leave({ current }) {
       document.documentElement.dataset.loading = 'true';

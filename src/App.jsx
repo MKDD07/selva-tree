@@ -19,9 +19,10 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 let hasShownInitialLoader = false;
 
 export default function App() {
-  const [contactOpen, setContactOpen] = useState(false);
-  const [loading, setLoading] = useState(() => !hasShownInitialLoader);
   const { pathname } = useLocation();
+  const isIndex = pathname === '/' || pathname === '';
+  const [contactOpen, setContactOpen] = useState(false);
+  const [loading, setLoading] = useState(() => !hasShownInitialLoader && isIndex);
 
   const isAdminRoute = pathname === '/admin-login' || pathname.startsWith('/admin');
 
