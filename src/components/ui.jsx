@@ -37,7 +37,7 @@ export const Eyebrow = ({ children, light }) => (
 );
 
 /**
- * Formats headings with #cb958f italic accents
+ * Formats headings with   color: var(--italic); italic accents
  */
 export function formatTitle(title) {
   if (!title || typeof title !== 'string') return title;

@@ -4,7 +4,7 @@ import { img } from './images';
 
 export const brand = {
   name: 'Selva Tree Hotels & Resorts',
-  tagline: 'A private retreat combining nature, sustainability, and luxury.',
+  tagline: 'A private luxury farmhouse retreat combining nature, sustainability, and hospitality in Sohna Gurugram.',
   phone: '+91 72104 83929',
   contactPerson: 'Chandrapal',
   whatsapp: '917210483929',
@@ -54,51 +54,64 @@ export const farmhouses = [
   {
     id: 'selva-tree',
     name: 'Selva Tree Hotels & Resorts',
-    tag: 'Private Luxury Estate',
-    blurb: 'A private retreat combining nature, sustainability, and luxury with lush lawns, private pool, and peaceful Aravalli surroundings.',
+    tag: 'Private Luxury Farmhouse Estate',
+    blurb: 'A private retreat combining nature, sustainability, and luxury with lush lawns, private pool, jacuzzi, and peaceful Aravalli surroundings in Sohna Gurugram.',
     images: galleryImages,
   },
 ];
 
 export const faq = [
   { 
-    q: 'Which is the best resort in Gurgaon for a destination wedding?', 
-    a: 'Selva Tree Hotels & Resorts in Sohna, Gurugram offers an idyllic destination wedding venue with sprawling lawns hosting up to 400 guests, 2 guest rooms, poolside settings, and flexible catering and decor policies.' 
+    q: 'Which is the best luxury farmhouse in Gurgaon for staycations and private parties?', 
+    a: 'Selva Tree Hotels & Resorts in Sohna, Gurugram is a premier luxury farmhouse retreat featuring a private swimming pool, 6-seater heated jacuzzi, 20,000+ sq. ft. of manicured lawns, 7 boutique suites, and complete estate privacy for families and groups.' 
   },
   { 
-    q: 'How many guests can Selva Tree Hotels & Resorts accommodate for an event?', 
-    a: 'Our venues accommodate events of all sizes: the drawing room & pre-function lawn host up to 200 guests, while our grand poolside lawn accommodates up to 400 guests with ample private parking.' 
+    q: 'Which is the best farmhouse resort in Gurgaon for destination weddings?', 
+    a: 'Selva Tree Hotels & Resorts in Sohna, Gurugram offers an idyllic destination wedding venue with sprawling lawns hosting up to 400 guests, an air-conditioned indoor drawing hall, 7 guest suites, poolside deck, and outside catering and decor permissions.' 
   },
   { 
-    q: 'Is there a banquet hall or indoor space available at Selva Tree Hotels & Resorts?', 
+    q: 'Can I book Selva Tree farmhouse for a pool party or birthday celebration in Gurgaon?', 
+    a: 'Yes. Our private swimming pool deck, jacuzzi, and adjoining 10,000+ sq. ft party lawns are popular for lively pool parties, milestone birthdays, cocktail evenings, Haldi, and Mehndi ceremonies with outside DJ and catering permitted.' 
+  },
+  { 
+    q: 'How many guests and rooms can Selva Tree farmhouse accommodate?', 
+    a: 'Selva Tree features 7 private luxury guest suites (4 Deluxe, 2 Premium, 1 Arawali Room) accommodating up to 25 overnight guests, while our expansive 20,000+ sq. ft. lawns comfortably host up to 400 floating event guests with ample on-site parking.' 
+  },
+  { 
+    q: 'Is there an indoor banquet hall or drawing room available at the farmhouse?', 
     a: 'Yes. We offer an air-conditioned 863 sq. ft. drawing hall with seamless Wi-Fi and attached lawns, ideal for indoor gatherings, weather backups, conferences, and intimate ceremonies.' 
   },
   { 
-    q: 'Can I host a poolside event or Mehndi ceremony at Selva Tree Hotels & Resorts?', 
-    a: 'Yes. Our shimmering swimming pool deck and adjoining lawns are popular for vibrant Haldi, Mehndi, cocktail pool parties, and starlit anniversary dinners.' 
+    q: 'Are outside catering, decorators, and DJs allowed at Selva Tree farmhouse?', 
+    a: 'Yes. We offer flexible policies: both in-house culinary preparations and outside catering (veg and non-veg) are permitted. Outside decorators, outside DJs, and outside alcohol are also warmly welcomed.' 
   },
   { 
-    q: 'What types of events can be organised at Selva Tree Hotels & Resorts?', 
-    a: 'We host destination weddings, pre-wedding rituals (Haldi/Mehndi/Roka), birthday parties, corporate offsites, retreats, family reunions, and small gatherings under 50 pax.' 
+    q: 'Where is Selva Tree farmhouse located and how far is it from Gurgaon?', 
+    a: 'Selva Tree Hotels & Resorts is located in Sohna Rural, Gurugram (Pin: 122103) near the scenic Aravalli foothills, easily accessible via the Sohna Elevated Corridor and Golf Course Extension Road within 30-40 minutes from Cyber City.' 
   },
   { 
-    q: 'Are lockers and private rooms available for guests to store their valuables?', 
-    a: 'Yes. Secure private rooms with storage lockers are provided for the host family and guests during the event duration.' 
-  },
-  { 
-    q: 'What are the catering and DJ policies?', 
-    a: 'Both in-house and outside catering are allowed (vegetarian & non-vegetarian). Outside decorators, outside DJs, and outside alcohol are also warmly permitted.' 
-  },
-  { 
-    q: 'How do I book?', 
-    a: 'Send an enquiry through our contact form, or connect with us directly on WhatsApp/Call to arrange a farm visit and confirm your dates.' 
+    q: 'How do I book Selva Tree farmhouse for a stay or event?', 
+    a: 'You can check real-time availability on our website, submit an online enquiry, or directly connect with our reservations manager Chandrapal at +91 72104 83929 or email booking@selvatreehotels.com to arrange a farm visit.' 
   },
 ];
 
 // Each page is a list of sections. `type` picks the component in components/Sections.jsx.
 export const pages = {
   '/': [
-    { type: 'hero', eyebrow: 'Nature-inspired stays · Manesar, Gurgaon', title: 'Countryside stays & celebrations in Gurugram.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
+    { type: 'hero', eyebrow: 'Luxury Farmhouse Retreat · Sohna, Gurugram', title: 'Luxury farmhouse stays & celebrations in Gurugram.', text: brand.tagline, image: img('dbf-hero', 2000, 1200), cta: { label: 'Book Now', to: '/contact' }, cta2: { label: 'Our Story', to: '/about-us' } },
+    {
+      type: 'aboutUs',
+      eyebrow: 'About Selva Tree Hotels & Resorts',
+      badge: 'Est. 2005 · Sohna Rural, Gurugram',
+      title: 'A Private Luxury Sanctuary in the Aravallis',
+      subtitle: 'Where nature’s tranquility meets bespoke hospitality, lush lawns & exclusive stays.',
+      paragraphs: [
+        'Established in 2005 in Sohna Rural, Gurugram, Selva Tree Hotels & Resorts was crafted as an eco-conscious luxury retreat to reconnect people with nature without compromising on modern comfort. Surrounded by peaceful Aravalli vistas, our private farmhouse estate offers an idyllic sanctuary just 35 minutes from Gurugram.',
+        'Spanning over 20,000 sq. ft. of manicured party lawns, 7 boutique suites, a private swimming pool with a 6-seater jacuzzi, and an air-conditioned drawing hall, we provide complete estate exclusivity for milestone celebrations, destination weddings, family staycations, and corporate retreats.'
+      ],
+      cta: { label: 'Explore Our Story', to: '/about-us' },
+      cta2: { label: 'Book Your Stay', to: '/contact' }
+    },
     { 
       type: 'mosaic', 
       theme: 'rose', 
@@ -107,12 +120,12 @@ export const pages = {
       items: [
         {
           title: 'Exceptional Luxury',
-          text: 'Luxury curated with warmth, design, and care, where every corner of our villa feels personal, intentional, and deeply comforting.',
+          text: 'Luxury curated with warmth, design, and care, where every corner of our private farmhouse feels personal, intentional, and deeply comforting.',
           image: img('dbf-luxury-pool', 800, 1000),
         },
         {
           title: 'Sustainable Approach',
-          text: 'Powered by solar energy with groundwater harvesting, automated water-saving sprinklers, and organic farm surroundings.',
+          text: 'Powered by solar energy with groundwater harvesting, automated water-saving sprinklers, and organic farmhouse surroundings.',
           image: img('dbf-eco-nature', 1000, 600),
         },
         {
@@ -122,7 +135,7 @@ export const pages = {
         },
         {
           title: 'Exclusive Dining & Perks',
-          text: 'Freshly cooked home-style meals, live barbecues, private pool access, and tranquil countryside relaxation for your group.',
+          text: 'Freshly cooked home-style meals, live barbecues, private swimming pool access, and tranquil countryside relaxation for your group.',
           image: img('dbf-chef-dining', 600, 600),
         },
       ]
@@ -130,9 +143,9 @@ export const pages = {
     { 
       type: 'featureBanner', 
       theme: 'rose',
-      eyebrow: 'YOUR PRIVATE GETAWAY',
+      eyebrow: 'YOUR PRIVATE FARMHOUSE GETAWAY',
       title: 'Let Your Private Oasis Welcome You & Yours',
-      text: 'Selva Tree Hotels & Resorts becomes your private curated escape — meticulously maintained, bathed in nature, and thoughtfully prepared for memorable celebrations and retreats.',
+      text: 'Selva Tree Hotels & Resorts becomes your private curated farmhouse escape — meticulously maintained, bathed in nature, and thoughtfully prepared for memorable celebrations, staycations, and retreats.',
       cta: { label: 'Book Your Stay', to: '/contact' },
       image: img('dbf-villa-ext', 1000, 850),
       badges: [
@@ -149,7 +162,7 @@ export const pages = {
       paragraphs: [
         'Composed with precision, our accommodation collection thoughtfully features 7 well-appointed rooms nestled amidst nature’s beauty: 4 spacious Deluxe Rooms, 2 luxury Premium Suites, and 1 exclusive Arawali Room overlooking the grand hill vistas.',
         'Each room is carefully designed with plush cushioned king beds, daylit windows, and modern en-suite amenities, allowing guests to effortlessly unwind in serene countryside comfort.',
-        'Whether booking an individual room or reserving the entire 7-room estate for exclusive celebrations and gatherings, we comfortably host families and groups in complete privacy and style.'
+        'Whether booking an individual room or reserving the entire 7-room farmhouse estate for exclusive celebrations and gatherings, we comfortably host families and groups in complete privacy and style.'
       ],
       points: [
         '4 Deluxe Rooms (Garden & pool vistas)',
@@ -170,7 +183,7 @@ export const pages = {
       subtitle: 'Two expansive lawns spanning over 10,000 sq. ft each.',
       paragraphs: [
         'Two expansive lawns, each spanning over 10,000 sq. ft, offer the perfect canvas for unforgettable events and celebrations to unfold. At Selva Tree Hotels & Resorts, our distinct event spaces aren’t just lawns; they are versatile spaces crafted with the beauty of nature that serve as the backdrop for some of the most cherished moments in your life.',
-        'Whether you\'re searching for a resort in Gurgaon for birthday celebrations or looking to host an event that’s unique and personal, we’ve got you covered. From dreamy star-lit weddings and laughter-filled birthday bashes to innovation-sparking corporate retreats and everything in between, let your wildest imaginations soar.',
+        'Whether you\'re searching for the best farmhouse in Gurgaon for birthday celebrations, weddings, pool parties, or corporate offsites, we’ve got you covered. From dreamy star-lit weddings and laughter-filled birthday bashes to innovation-sparking corporate retreats, let your celebrations soar.',
         'Want to turn up the vibe? We can arrange for a professional DJ to set the energy and skilled bartenders to mix well-designed drinks, available upon request. Because at Selva Tree Hotels & Resorts, we don’t just host events — we infuse every celebration with creativity.'
       ],
       points: [
@@ -205,15 +218,15 @@ export const pages = {
       cta: { label: 'Reserve with Dining', to: '/contact' },
       flip: false,
     },
-    { type: 'stats', items: [{ value: 2005, suffix: '', label: 'Established Year' }, { value: 200, suffix: '+', label: 'Seating Lawn Capacity' }, { value: 300, suffix: '+', label: 'Floating Guests Capacity' }, { value: 7, suffix: '', label: 'Private Guest Rooms' }] },
+    { type: 'stats', items: [{ value: 2005, suffix: '', label: 'Established Year' }, { value: 200, suffix: '+', label: 'Seating Lawn Capacity' }, { value: 400, suffix: '+', label: 'Floating Guests Capacity' }, { value: 7, suffix: '', label: 'Private Guest Rooms' }] },
     {
       type: 'amenities',
       title: 'Amenities & Policies',
       theme: 'sand',
       items: [
-        { iconKey: 'swimming-pool', label: 'Pets Friendly' },
+        { iconKey: 'swimming-pool', label: 'Private Swimming Pool' },
         { iconKey: 'jacuzzi', label: '6-Seater Jacuzzi' },
-        { iconKey: 'spacious-outdoor-lawn', label: 'Spacious Outdoor Lawn' },
+        { iconKey: 'spacious-outdoor-lawn', label: '20,000+ sq. ft Lawns' },
         { iconKey: 'sufficient-car-parking', label: 'Sufficient Car Parking' },
         { iconKey: '2-private-guest-rooms', label: '7 Private Guest Rooms' },
         { iconKey: 'table-tennis', label: 'Table Tennis & Games' },
@@ -229,12 +242,12 @@ export const pages = {
       type: 'eventShowcase',
       theme: 'sand',
       title: 'Unforgettable Events, Perfect Venues',
-      text: 'From dreamy weddings to lively celebrations, our properties set the stage for every special moment.',
+      text: 'From dreamy weddings to lively pool parties and celebrations, our farmhouse sets the stage for every special moment.',
       items: [
         {
           title: 'Weddings & Receptions',
-          text: 'Expansive lush green outdoor lawns hosting up to 200 seating and 300 floating guests with customized decor and catering.',
-          badge: 'Up to 300 guests',
+          text: 'Expansive lush green outdoor lawns hosting up to 200 seating and 400 floating guests with customized decor and catering.',
+          badge: 'Up to 400 guests',
           image: img('dbf-event-wedding', 600, 600),
         },
         {
@@ -245,7 +258,7 @@ export const pages = {
         },
         {
           title: 'Birthdays & Private Parties',
-          text: 'Host intimate gatherings (<50 pax) or grand birthday bashes with outside catering, decor, and DJ flexibility.',
+          text: 'Host intimate gatherings (<50 pax) or grand birthday bashes with private pool, outside catering, decor, and DJ flexibility.',
           badge: 'Flexible party policy',
           image: img('dbf-event-birthday', 600, 600),
         },
@@ -302,24 +315,24 @@ export const pages = {
       subtitle: 'Everything you need to know about your luxury staycation & event reservations.',
       items: faq,
     },
-    { type: 'cta', title: 'Your dates, your people, your farm.', text: 'Tell us what you are planning and we will take care of the rest.', cta: { label: 'Book Now', to: '/contact' } },
+    { type: 'cta', title: 'Your dates, your people, your private farmhouse.', text: 'Tell us what you are planning and we will take care of the rest.', cta: { label: 'Book Now', to: '/contact' } },
   ],
   '/about-us': [
-    { type: 'head', eyebrow: 'About Us', title: 'About Selva Tree Hotels & Resorts.', text: 'Established in 2005, Selva Tree Hotels & Resorts offers picturesque greenery, peaceful landscapes, and a soothing atmosphere.', image: img('dbf-about-head', 2000, 900) },
+    { type: 'head', eyebrow: 'About Us', title: 'About Selva Tree Hotels & Resorts.', text: 'Established in 2005, Selva Tree Hotels & Resorts is an eco-luxury farmhouse retreat in Sohna Gurugram offering picturesque greenery, peaceful landscapes, and warm hospitality.', image: img('dbf-about-head', 2000, 900) },
     { 
       type: 'split', 
       eyebrow: 'Our Heritage', 
       title: 'Established in 2005, sustained by nature.', 
       text: [
-        'Selva Tree Hotels & Resorts is nestled in Sohna of Gurugram, Haryana, posing as a breathtaking venue idyllic for hosting various functions, staycations, and memorable celebrations. Established in 2005, the estate envelops picturesque greenery and a soothing countryside atmosphere.',
-        'This enchanting place provides a serene escape from the chaos of everyday life, making it an ideal setting for both daytime and evening festivities. Breathtaking vistas create an amazing backdrop, elevating the overall ambiance to one of tranquillity and natural beauty.',
-        'Whether you are planning a grand wedding celebration, a family get-together, or an intimate birthday party, Selva Tree Hotels & Resorts offers flexible hospitality with in-house and outside catering, decor, DJ, and alcohol permissions.'
+        'Selva Tree Hotels & Resorts is nestled in Sohna Rural of Gurugram, Haryana, posing as a breathtaking luxury farmhouse venue idyllic for hosting destination weddings, staycations, and memorable celebrations. Established in 2005, the estate envelops picturesque greenery and a soothing countryside atmosphere.',
+        'This enchanting place provides a serene escape from the chaos of everyday city life, making it an ideal setting for both daytime and evening festivities. Breathtaking Aravalli vistas create an amazing backdrop, elevating the overall ambiance to one of tranquillity and natural beauty.',
+        'Whether you are planning a grand farmhouse wedding, a family get-together, or an intimate birthday party, Selva Tree Hotels & Resorts offers flexible hospitality with in-house and outside catering, decor, DJ, and alcohol permissions.'
       ], 
       image: img('dbf-story', 1100, 1300), 
       points: [
         'Established in 2005 in Sohna Rural, Gurugram',
-        'Outdoor lawn with 200 seating & 300 floating guest capacity',
-        '2 comfortable private rooms & sufficient on-site parking',
+        'Outdoor party lawns with 200 seating & 400 floating guest capacity',
+        '7 comfortable private rooms & sufficient on-site parking',
         'Inhouse & outside catering, decorators, DJ & alcohol permitted'
       ],
       link: { label: 'Book Your Stay', to: '/contact' }
@@ -330,12 +343,12 @@ export const pages = {
       eyebrow: 'Capacity & Policies',
       title: 'Space, freedom & personalized celebrations.',
       text: [
-        'Space & Capacity: Our expansive outdoor lawn comfortably accommodates 200 seating and up to 300 floating guests, complemented by 2 well-equipped private rooms.',
-        'Flexible Policies: We welcome outside decorators and outside catering alongside our in-house culinary preparations, allowing you to curate your event exactly as envisioned. Outside DJ and outside alcohol are also permitted.'
+        'Space & Capacity: Our expansive outdoor lawns comfortably accommodate 200 seating and up to 400 floating guests, complemented by 7 well-equipped private guest suites and an air-conditioned drawing hall.',
+        'Flexible Policies: We welcome outside decorators and outside catering alongside our in-house culinary preparations, allowing you to curate your event exactly as envisioned. Outside DJ and outside alcohol are also warmly permitted.'
       ],
       image: img('dbf-vision', 1100, 1300),
       points: [
-        'Small party friendly (<50 pax allowed)',
+        'Small party friendly (<50 pax allowed) & large wedding celebrations',
         'Delightful vegetarian & non-vegetarian multi-cuisine options',
         'Idyllic setting for daytime ceremonies & starlit evening receptions'
       ]
@@ -354,10 +367,10 @@ export const pages = {
         { icon: 'Sun', title: 'Day & Night Events', text: 'Equally enchanting for morning sunshine ceremonies, poolside afternoons, and starlit banquets.' }
       ]
     },
-    { type: 'cta', title: 'Experience the serenity of Selva Tree Hotels & Resorts.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
+    { type: 'cta', title: 'Experience the serenity of Selva Tree farmhouse.', text: 'Plan your celebration, wedding, or private getaway with us today.', cta: { label: 'Book Now', to: '/contact' } }
   ],
   '/stay': [
-    { type: 'head', eyebrow: 'Stay & Rooms', title: 'Rooms & countryside stays in Gurugram.', text: '7 curated private guest rooms across Deluxe, Premium, and Arawali collections with pool and lawn access.', image: img('dbf-stay-head', 2000, 900) },
+    { type: 'head', eyebrow: 'Stay & Suites', title: 'Rooms & countryside stays in Gurugram.', text: '7 curated private guest rooms across Deluxe, Premium, and Arawali collections with private swimming pool, jacuzzi, and organic farm lawn access in Sohna Gurugram.', image: img('dbf-stay-head', 2000, 900) },
     { type: 'cards', eyebrow: 'Accommodations', title: 'Our Private Suites & Rooms', variant: 'vertical', items: [
       {
         title: 'Deluxe Rooms',
@@ -410,29 +423,29 @@ export const pages = {
       title: 'Amenities & Inclusions',
       theme: 'sand',
       items: [
-        { iconKey: 'swimming-pool', label: 'Swimming Pool' },
-        { iconKey: 'jacuzzi', label: '6-Seater Jacuzzi' },
-        { iconKey: 'expansive-lawn', label: 'Spacious Outdoor Lawn' },
+        { iconKey: 'swimming-pool', label: 'Private Swimming Pool' },
+        { iconKey: 'jacuzzi', label: '6-Seater Heated Jacuzzi' },
+        { iconKey: 'expansive-lawn', label: '20,000+ sq. ft Lush Lawns' },
         { iconKey: 'sufficient-car-parking', label: 'Sufficient Car Parking' },
         { iconKey: '2-private-rooms', label: '7 Private Guest Rooms (4 Deluxe, 2 Premium, 1 Arawali)' },
         { iconKey: 'table-tennis', label: 'Table Tennis' },
         { iconKey: 'childrens-play-area', label: "Children's Play Area" },
         { iconKey: 'trampoline', label: 'Trampoline' },
-        { iconKey: 'bonfire-bbq', label: 'Bonfire & BBQ' },
+        { iconKey: 'bonfire-bbq', label: 'Bonfire & Live BBQ' },
         { iconKey: 'inhouse-outside-dj', label: 'JBL Party Box / DJ' },
         { iconKey: 'pet-friendly', label: 'Pet-friendly Estate' },
-        { iconKey: '24-hour-security', label: '24-Hour Security' },
+        { iconKey: '24-hour-security', label: '24-Hour Security & Caretaker' },
       ]
     },
     { type: 'faq', title: 'Good to know', items: faq },
-    { type: 'cta', title: 'Ready when you are.', text: 'Share your dates and group size.', cta: { label: 'Book Now', to: '/contact' } },
+    { type: 'cta', title: 'Ready when you are.', text: 'Reserve your luxury farmhouse stay in Sohna Gurugram.', cta: { label: 'Book Now', to: '/contact' } },
   ],
   '/events': [
     { 
       type: 'head', 
       eyebrow: 'Weddings & Celebrations', 
       title: 'Wedding & event venues in Gurugram.', 
-      text: 'Dreaming of the perfect event? Selva Tree Hotels & Resorts offers unique spaces to bring it to life. Choose a sprawling lawn for open-air celebrations, or a spacious indoor hall for any occasion.', 
+      text: 'Dreaming of the perfect celebration? Selva Tree luxury farmhouse in Sohna Gurugram offers versatile spaces: sprawling 20,000+ sq. ft party lawns for open-air functions, pool deck, and an air-conditioned drawing hall.', 
       image: img('dbf-events-head', 2000, 900) 
     },
     {
@@ -440,7 +453,7 @@ export const pages = {
       eyebrow: 'Event Spaces & Capacities',
       title: 'Versatile indoor & outdoor venues.',
       subtitle: 'Two unique spaces with pre-function areas, air-conditioned comfort, and sprawling green lawns.',
-      intro: 'Unfold your dream event at Selva Tree Hotels & Resorts Gurgaon, one of the top wedding and celebration destinations, where every milestone becomes a lasting memory. From grand galas to productive corporate meetings, we have got you covered.',
+      intro: 'Unfold your dream event at Selva Tree Hotels & Resorts farmhouse in Sohna Gurugram, one of the premier wedding and party venues with outside catering and music flexibility.',
       venues: [
         {
           name: 'The Drawing Hall & 13,000 sq. ft. Lawn',
@@ -511,7 +524,7 @@ export const pages = {
       type: 'head',
       eyebrow: 'Farm-to-Table Experience',
       title: 'Curated gourmet dining in nature.',
-      text: 'Indulge in fresh multi-cuisine delicacies, live outdoor barbecue, and candlelit garden dinners crafted by our private culinary team.',
+      text: 'Indulge in fresh multi-cuisine delicacies, live outdoor barbecue, and candlelit garden dinners crafted by our private culinary team at Selva Tree farmhouse in Sohna.',
       image: img('dbf-dining-head', 2000, 900),
     },
     {
@@ -540,9 +553,9 @@ export const pages = {
   '/facilities': [
     {
       type: 'head',
-      eyebrow: 'Estate Amenities',
+      eyebrow: 'Farmhouse Amenities',
       title: 'World-class facilities in Sohna.',
-      text: 'From a crystal-clear swimming pool and 6-seater jacuzzi to expansive sports lawns and secure parking, experience uncompromised luxury.',
+      text: 'From a crystal-clear swimming pool and 6-seater heated jacuzzi to expansive sports lawns and secure parking, experience uncompromised luxury at Selva Tree farmhouse.',
       image: img('dbf-facilities-head', 2000, 900),
     },
     {
@@ -571,7 +584,7 @@ export const pages = {
       type: 'head',
       eyebrow: 'Weddings & Celebrations',
       title: 'Grand destination weddings in Gurgaon.',
-      text: 'Exchange vows under star-lit skies on over 20,000 sq. ft. of emerald lawns, complemented by air-conditioned banquet halls and boutique suites.',
+      text: 'Exchange vows under star-lit skies on over 20,000 sq. ft. of emerald lawns at our luxury farmhouse in Sohna Gurugram, complemented by air-conditioned banquet halls, pool deck, and boutique suites.',
       image: img('dbf-weddings-head', 2000, 900),
     },
     {
@@ -608,7 +621,7 @@ export const pages = {
       type: 'head',
       eyebrow: 'Poolside Celebrations',
       title: 'Farmhouse for pool party in Gurgaon.',
-      text: 'Host the ultimate sun-soaked pool party at Selva Tree. Crystal clear pool, sun loungers, outdoor bar counter, and booming audio setup.',
+      text: 'Host the ultimate sun-soaked pool party at Selva Tree farmhouse in Sohna Gurugram. Crystal clear swimming pool, heated jacuzzi, outdoor bar counter, and booming audio setup.',
       image: img('dbf-pool-party-head', 2000, 900),
     },
     {
@@ -639,7 +652,7 @@ export const pages = {
       type: 'head',
       eyebrow: 'Birthday Parties & Milestones',
       title: 'Farmhouse for birthday party in Gurgaon.',
-      text: 'Celebrate birthdays in style with open-air lawns, personalized themed decor, DJ sound systems, and bonfire evenings in Sohna.',
+      text: 'Celebrate birthdays in style with open-air lawns, personalized themed decor, DJ sound systems, and bonfire evenings at Selva Tree farmhouse in Sohna Gurgaon.',
       image: img('dbf-birthday-head', 2000, 900),
     },
     {
@@ -670,7 +683,7 @@ export const pages = {
       type: 'head',
       eyebrow: 'Guest Guidelines',
       title: 'Terms & conditions.',
-      text: 'Review our booking policies, check-in requirements, and guidelines designed to ensure a safe, peaceful stay for all guests.',
+      text: 'Review our booking policies, check-in requirements, and guidelines designed to ensure a safe, peaceful stay at Selva Tree farmhouse in Sohna Gurugram.',
       image: img('dbf-policy-head', 2000, 900),
     },
     {

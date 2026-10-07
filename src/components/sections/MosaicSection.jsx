@@ -1,3 +1,5 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import { Eyebrow, formatTitle } from '../ui';
 
 export default function MosaicSection({ eyebrow, title, items = [], theme = 'sand' }) {
@@ -12,6 +14,8 @@ export default function MosaicSection({ eyebrow, title, items = [], theme = 'san
             {title && <h2 data-reveal>{formatTitle(title)}</h2>}
           </div>
         )}
+
+        {/* Desktop Asymmetrical Grid */}
         <div className="mosaic-grid">
           {tall && (
             <div className="mosaic-card mosaic-card--tall" data-reveal>
@@ -64,6 +68,29 @@ export default function MosaicSection({ eyebrow, title, items = [], theme = 'san
               )}
             </div>
           </div>
+        </div>
+
+        {/* Mobile Swiper */}
+        <div className="mosaic-mobile-swiper">
+          <Swiper
+            slidesPerView={1.18}
+            spaceBetween={16}
+            className="mosaic-swiper"
+          >
+            {items.map((item, idx) => (
+              <SwiperSlide key={idx} style={{ height: 'auto', display: 'flex' }}>
+                <div className="mosaic-card mosaic-card--mobile" style={{ width: '100%', height: '100%' }}>
+                  <div className="mosaic-card__img">
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                  </div>
+                  <div className="mosaic-card__content">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

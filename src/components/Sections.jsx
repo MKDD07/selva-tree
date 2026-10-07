@@ -17,11 +17,14 @@ import FeatureSplitSection from './sections/FeatureSplitSection';
 import NewsletterSection from './sections/NewsletterSection';
 import MapSection from './sections/MapSection';
 import EventVenuesSection from './sections/EventVenuesSection';
+import AboutUsSection from './sections/AboutUsSection';
 
 export { Btn, Eyebrow, formatTitle } from './ui';
 
 export const registry = { 
   hero: HeroSection, 
+  about: AboutUsSection,
+  aboutUs: AboutUsSection,
   head: HeadSection, 
   split: SplitSection, 
   stats: StatsSection, 

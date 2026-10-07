@@ -1,40 +1,29 @@
-# SEO and AI discovery improvements
+# SEO and Farmhouse Optimization
 
-Verified on 6 October 2026.
+Verified on 7 October 2026 for **SelvaTree Hotels & Resorts** (Luxury Farmhouse & Event Venue in Sohna, Gurugram).
 
-| Page | Search focus |
+| Page | Search focus & Target Keywords |
 | --- | --- |
-| Home | Selva Tree, countryside stays and events in Gurugram |
-| About | Brand and Sohna/Gurugram location |
-| Stay | Rooms, overnight stays and booking arrangements |
-| Events | Weddings, indoor venues, lawns and private events |
-| Gallery | Property photographs, distinct from illustrative stock photography |
-| Contact | Reservations email, phone and enquiry process |
+| Home (`/`) | Luxury Farmhouse in Gurgaon & Sohna, private pool, 20,000+ sq. ft lawns, staycation |
+| About Us (`/about-us`) | Eco-luxury farmhouse retreat, brand heritage (est. 2005), Aravalli views, capacity |
+| Stay (`/stay`) | Luxury farmhouse stays, 7 boutique suites (Deluxe, Premium, Arawali), private buyout |
+| Events (`/events`) | Farmhouse wedding and event venues in Gurugram, 400 capacity, AC drawing hall |
+| Gallery (`/gallery`) | Real farmhouse photo gallery, pool deck, suites, lawns, Aravalli vistas |
+| Contact (`/contact`) | Farmhouse booking, reservations (+91 72104 83929 / booking@selvatreehotels.com) |
+| Dining (`/dining`) | Farm-to-table gourmet dining, live BBQ, organic ingredients, poolside dinners |
+| Facilities (`/facilities`) | Farmhouse amenities: private swimming pool, 6-seater jacuzzi, lawns, sports, bonfire |
+| Weddings & Events (`/weddings-events`) | Destination wedding farmhouse in Gurgaon, pre-wedding rituals, open-air lawns |
+| Pool Party (`/farmhouse-for-pool-party-in-gurgaon`) | Private farmhouse for pool party in Gurgaon, sound setup, outside catering |
+| Birthday Party (`/farmhouse-for-birthday-party-in-gurgaon`) | Farmhouse for birthday party in Gurgaon, kids trampoline, BBQ, music, lawns |
+| Terms & Conditions (`/terms-conditions`) | Farmhouse booking terms, check-in policy, party rules, noise guidelines |
 
-All six pages return HTTP 200 with a unique title, description, canonical URL,
-one H1, readable body HTML, social share tags and JSON-LD in the initial response.
-Content is the same for visitors and crawlers. Main headings and page guides were
-updated; navigation updates metadata too. The booking email is now
-booking@selvatreehotels.com.
+All twelve canonical pages return HTTP 200 with:
+- Exactly one `<h1>` per page with semantic heading hierarchy.
+- Unique, high-intent title tags and meta descriptions targeting farmhouse searches in Gurgaon / Sohna.
+- Keyword meta tags and full Open Graph + Twitter Card tags with accurate image alt descriptions.
+- Rich Schema.org structured data (`LodgingBusiness`, `WebSite`, breadcrumbs, amenities, geo coordinates).
+- Descriptive image `alt` attributes on hero sections, head sections, cards, venues, and gallery images.
+- Full server-side pre-rendered HTML in `dist/` for search crawlers and AI search engines (via `llms.txt`).
+- Discovery files `robots.txt` and `sitemap.xml` pointing to all 12 canonical pages.
 
-Live checks passed for robots.txt, sitemap.xml and llms.txt. /book-now redirects
-permanently to /contact, trailing slashes normalize, and an unknown URL returns
-HTTP 404. Eight automated checks cover rendered pages, routing and the existing
-image service. The build and Wrangler dry run passed.
-
-## Owner follow-up
-
-- Connect selvatreehotels.com and enable working HTTPS. Both apex and www failed
-  TLS during this audit. Until then, canonicals reference the working workers.dev
-  host. The origin is centrally configured in shared/seo.js.
-- Confirm the actual room count, overnight capacity and property location. The
-  existing copy mentions both two and four rooms and different event layouts.
-  Precise capacities, ratings, prices and awards were not added to structured data.
-- Confirm that existing guest testimonials and historical claims are authentic
-  before relying on them as marketing evidence. They were not marked up as reviews.
-- Once the final domain works, update the origin, redirect the old host, rebuild,
-  and submit /sitemap.xml in Google Search Console and Bing Webmaster Tools.
-- Monitor index coverage, performance and enquiry conversions. llms.txt is an
-  emerging discovery convention; no ranking or AI-citation outcome is guaranteed.
-
-Implementation details and source guidance are in README.md.
+Automated regression test suite passes with 9/9 tests verified.

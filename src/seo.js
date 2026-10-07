@@ -7,10 +7,12 @@ export function updateSeo(pathname) {
   document.title = page.title;
   const url = siteOrigin + (path === '/' ? '/' : path);
   const values = {
-    description: page.description, robots: 'index, follow, max-image-preview:large',
+    description: page.description,
+    ...(page.keywords ? { keywords: page.keywords } : {}),
+    robots: 'index, follow, max-image-preview:large',
     'og:title': page.title, 'og:description': page.description, 'og:url': url,
     'og:type': 'website', 'og:site_name': siteName, 'og:locale': 'en_IN',
-    'og:image': siteOrigin + '/images/fallback.jpeg', 'og:image:alt': 'Selva Tree property photograph',
+    'og:image': siteOrigin + '/images/fallback.jpeg', 'og:image:alt': 'Selva Tree Hotels & Resorts luxury farmhouse photograph',
     'twitter:card': 'summary_large_image', 'twitter:title': page.title,
     'twitter:description': page.description, 'twitter:image': siteOrigin + '/images/fallback.jpeg',
   };

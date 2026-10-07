@@ -22,7 +22,7 @@ export default function FeatureSplitSection({
         <div className="feature-split__copy" data-reveal>
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
           <h2>{formatTitle(title)}</h2>
-          {subtitle && <p style={{ fontWeight: 500, color: '#120e0c', fontSize: '1.05rem', marginBottom: '14px' }}>{subtitle}</p>}
+          {subtitle && <p style={{ fontWeight: 500, color: 'var(--text)', fontSize: 'var(--fs-base)', marginBottom: '14px' }}>{subtitle}</p>}
           {paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}

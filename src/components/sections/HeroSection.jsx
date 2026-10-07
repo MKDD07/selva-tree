@@ -5,7 +5,6 @@ import { useForm, ValidationError } from '@formspree/react';
 import {
   Calendar,
   Users,
-  Percent,
   Leaf,
   User,
   Phone,
@@ -16,7 +15,11 @@ import {
   ChevronRight,
   CheckCircle2,
   ArrowUpRight,
-  Send
+  Send,
+  X,
+  Sparkles,
+  BedDouble,
+  Home
 } from 'lucide-react';
 import { brand } from '../../data/site';
 import { Btn, formatTitle } from '../ui';
@@ -171,7 +174,7 @@ function DatePickerPopover({ value, onChange, minDate, calendarData, onClose }) 
   );
 }
 
-// Custom Guests selection popover matching the DatePicker design
+// Custom luxury Guests selection popover matching resort aesthetics
 function GuestsPopover({ value, onChange, onClose }) {
   const popoverRef = useRef(null);
 
@@ -186,34 +189,103 @@ function GuestsPopover({ value, onChange, onClose }) {
   }, [onClose]);
 
   const options = [
-    { label: 'Deluxe Room (4 Available)', desc: 'Spacious Deluxe room with garden views & king bed (Up to 4 rooms)' },
-    { label: 'Premium Room (2 Available)', desc: 'Luxury Premium suite with refined interiors & plush comfort (Up to 2 rooms)' },
-    { label: 'Arawali Room (1 Available)', desc: 'Exclusive scenic suite with panoramic Arawali hill views' },
-    { label: 'Entire Estate (All 7 Rooms, Up to 25 Guests)', desc: 'Complete private buyout: 4 Deluxe + 2 Premium + 1 Arawali' },
+    {
+      label: 'Deluxe Room (4 Available)',
+      title: 'Deluxe Room',
+      badge: '4 Available',
+      desc: 'Spacious boutique room with private patio & garden views',
+      features: 'Garden View • King Bed • Ensuite Bath',
+      Icon: BedDouble,
+    },
+    {
+      label: 'Premium Room (2 Available)',
+      title: 'Premium Suite',
+      badge: '2 Available',
+      desc: 'Luxury suite with refined lounge corner & pool deck access',
+      features: 'Lounge Seating • Pool Deck Access',
+      Icon: Sparkles,
+    },
+    {
+      label: 'Arawali Room (1 Available)',
+      title: 'Arawali Mountain Suite',
+      badge: '1 Exclusive',
+      desc: 'Signature scenic suite overlooking the Aravali sunset ridge',
+      features: 'Panoramic Hill View • Private Balcony',
+      Icon: Leaf,
+    },
+    {
+      label: 'Entire Estate (All 7 Rooms, Up to 25 Guests)',
+      title: 'Full Estate Buyout',
+      badge: 'Private Buyout • Up to 25 Guests',
+      desc: 'Complete private booking of all 7 luxury rooms, lawns & pool',
+      features: 'All 7 Rooms • Private Pool & Lawns • Outside Catering OK',
+      Icon: Home,
+    },
   ];
 
   return (
-    <div className="booking-guests-popover" ref={popoverRef} role="dialog" aria-label="Select rooms and guests">
-      {options.map((opt) => {
-        const isSelected = opt.label === value;
-        return (
-          <button
-            key={opt.label}
-            type="button"
-            className={`booking-guest-option ${isSelected ? 'booking-guest-option--active' : ''}`}
-            onClick={() => {
-              onChange(opt.label);
-              onClose();
-            }}
-          >
-            <div>
-              <span className="booking-guest-option__title">{opt.label}</span>
-              <span className="booking-guest-option__desc">{opt.desc}</span>
-            </div>
-            {isSelected && <CheckCircle2 size={16} />}
-          </button>
-        );
-      })}
+    <div className="booking-guests-popover" ref={popoverRef} role="dialog" aria-label="Select accommodations">
+      <div className="booking-guests-popover__header">
+        <div>
+          <span className="booking-guests-popover__eyebrow">Accommodations</span>
+          <h4 className="booking-guests-popover__title">Select Room or Buyout</h4>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="booking-popover-close-btn"
+          aria-label="Close accommodations picker"
+        >
+          <X size={15} />
+        </button>
+      </div>
+
+      <div className="booking-guests-list">
+        {options.map((opt) => {
+          const isSelected = opt.label === value;
+          const { Icon } = opt;
+          return (
+            <button
+              key={opt.label}
+              type="button"
+              className={`booking-guest-card ${isSelected ? 'booking-guest-card--active' : ''}`}
+              onClick={() => {
+                onChange(opt.label);
+                onClose();
+              }}
+            >
+              <div className="booking-guest-card__icon" aria-hidden="true">
+                <Icon size={18} />
+              </div>
+
+              <div className="booking-guest-card__main">
+                <div className="booking-guest-card__header">
+                  <span className="booking-guest-card__title">{opt.title}</span>
+                  <span className={`booking-guest-card__badge ${opt.label.startsWith('Entire') ? 'booking-guest-card__badge--buyout' : ''}`}>
+                    {opt.badge}
+                  </span>
+                </div>
+                <p className="booking-guest-card__desc">{opt.desc}</p>
+                <span className="booking-guest-card__features">{opt.features}</span>
+              </div>
+
+              <div className="booking-guest-card__indicator" aria-hidden="true">
+                {isSelected ? (
+                  <CheckCircle2 size={18} className="booking-guest-card__check" />
+                ) : (
+                  <span className="booking-guest-card__radio" />
+                )}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="booking-guests-popover__footer">
+        <span>✓ Best Direct Rate</span>
+        <span>•</span>
+        <span>Instant WhatsApp Confirmation</span>
+      </div>
     </div>
   );
 }
@@ -344,7 +416,7 @@ export default function HeroSection({ eyebrow, title, text, image }) {
 
   return (
     <section className="hero" ref={ref}>
-      <img className="hero__img" src={image} alt="" fetchPriority="high" />
+      <img className="hero__img" src={image} alt="Selva Tree Hotels & Resorts luxury farmhouse estate in Sohna Gurugram" fetchPriority="high" />
       <div className="hero__shade" />
       <div className="wrap hero__body">
         <p className="eyebrow eyebrow--light" data-in>{eyebrow}</p>
@@ -435,7 +507,7 @@ export default function HeroSection({ eyebrow, title, text, image }) {
             </div>
 
             {/* Guests Selection matching dates design */}
-            <div className="booking-field booking-field--date">
+            <div className="booking-field booking-field--date booking-field--guests">
               <label htmlFor="hero-guests-btn">Rooms &amp; guests</label>
               <div className="booking-input-wrap">
                 <Users size={16} className="booking-icon" aria-hidden="true" />
@@ -459,21 +531,6 @@ export default function HeroSection({ eyebrow, title, text, image }) {
                   }}
                 />
               )}
-            </div>
-
-            {/* Promo Code */}
-            <div className="booking-field">
-              <label htmlFor="hero-promo">Promo code <span>Optional</span></label>
-              <div className="booking-input-wrap">
-                <Percent size={15} className="booking-icon" aria-hidden="true" />
-                <input
-                  type="text"
-                  id="hero-promo"
-                  placeholder="Enter code"
-                  value={booking.promo}
-                  onChange={(e) => setBooking({ ...booking, promo: e.target.value })}
-                />
-              </div>
             </div>
 
             <div className="booking-action">

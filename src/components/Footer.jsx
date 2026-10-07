@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { brand } from '../data/site';
-import logoWhite from '../assets/logo/logo-white.svg';
+import logoDark from '../assets/logo/logo-dark.svg';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -46,7 +46,7 @@ export default function Footer() {
 
           <div className="footer__columns">
             <div className="footer__brand">
-              <Link to="/" className="footer__logo-link"><img src={logoWhite} alt={brand.name} className="footer__logo-img" /></Link>
+              <Link to="/" className="footer__logo-link"><img src={logoDark} alt={brand.name} className="footer__logo-img" /></Link>
               <p className="footer__tagline">{brand.tagline}</p>
               <a className="footer__location" href={brand.mapsUrl} target="_blank" rel="noopener noreferrer"><MapPin size={16} aria-hidden="true" /> Sohna Rural, Gurugram <ArrowUpRight size={14} aria-hidden="true" /></a>
             </div>
@@ -67,7 +67,7 @@ export default function Footer() {
             </nav>
             <div className="footer__col footer__col--connect">
               <h3>Say hello</h3>
-              {brand.contactPerson && <p className="footer__contact-person" style={{ fontSize: '0.88rem', color: '#a89f91', marginBottom: '8px' }}>Contact: <strong>{brand.contactPerson}</strong></p>}
+              {brand.contactPerson && <p className="footer__contact-person" style={{ fontSize: 'var(--fs-sm)', color: 'var(--text-muted)', marginBottom: '8px' }}>Contact: <strong style={{ color: 'var(--text)' }}>{brand.contactPerson}</strong></p>}
               <a href={`tel:${brand.phone.replace(/[^+\d]/g, '')}`}><Phone size={16} aria-hidden="true" /><span>{brand.phone}</span></a>
               <a href={`mailto:${brand.email}`}><Mail size={16} aria-hidden="true" /><span>{brand.email}</span></a>
               <a className="footer__whatsapp" href={`https://wa.me/${brand.whatsapp}`} target="_blank" rel="noopener noreferrer">Chat on WhatsApp <ArrowUpRight size={16} aria-hidden="true" /></a>

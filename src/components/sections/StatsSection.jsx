@@ -21,7 +21,7 @@ function Odometer({ value, suffix = '' }) {
   );
 }
 
-export default function StatsSection({ items = [] }) {
+export default function StatsSection({ items = [], theme = 'dark' }) {
   const ref = useRef(null);
   useGSAP(() => {
     const media = gsap.matchMedia();
@@ -57,7 +57,7 @@ export default function StatsSection({ items = [] }) {
     return () => media.revert();
   }, { scope: ref, dependencies: [items], revertOnUpdate: true });
   return (
-    <section className="sec sec--dark stats-section" ref={ref} aria-label="The estate in numbers">
+    <section className={`sec stats-section stats-section--${theme} ${theme === 'dark' || theme === 'forest' ? 'sec--dark' : ''}`} ref={ref} aria-label="The estate in numbers">
       <div className="wrap">
         <div className="stats-section__intro">
           <p className="eyebrow">Space to make memories</p>

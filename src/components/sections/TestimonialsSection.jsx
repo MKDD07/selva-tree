@@ -17,7 +17,7 @@ export default function TestimonialsSection({ title = 'Loved by Guests & Hosts',
         <div className="testimonials-col-left" data-reveal>
           <div className="testimonials-header">
             <h2>{formatTitle(title)}</h2>
-            {subtitle && <p className="hero__text" style={{ color: '#6b635c', fontSize: '0.96rem', marginTop: '-14px', marginBottom: '28px' }}>{subtitle}</p>}
+            {subtitle && <p className="hero__text" style={{ color: 'var(--text-muted)', fontSize: 'var(--fs-base)', marginTop: '-14px', marginBottom: '28px' }}>{subtitle}</p>}
           </div>
           <div className="testimonials-nav">
             <button ref={prevRef} className="testimonials-btn testimonials-btn--prev" aria-label="Previous review">

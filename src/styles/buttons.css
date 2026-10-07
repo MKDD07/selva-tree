@@ -1,33 +1,36 @@
 /* Universal actions. Section styles should only control placement. */
 .btn {
-  --btn-bg: #120e0c;
-  --btn-fg: #ffffff;
-  --btn-border: #120e0c;
-  --btn-hover-bg: #cb958f;
-  --btn-hover-fg: #120e0c;
-  --btn-hover-border: #cb958f;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 48px;
-  max-width: 100%;
-  padding: 14px 26px;
-  border: 1px solid var(--btn-border);
-  border-radius: 999px;
-  background: var(--btn-bg);
-  color: var(--btn-fg);
-  font: 500 0.82rem/1.35 var(--sans);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  transition: color 300ms ease, border-color 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+    --btn-bg: var(--primary);
+    --btn-fg: var(--white);
+    --btn-border: var(--primary);
+    --btn-hover-bg: var(--primary-light);
+    --btn-hover-fg: var(--white);
+    --btn-hover-border: var(--primary-light);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 48px;
+    max-width: 100%;
+    padding: 13px 26px;
+    border: 1px solid var(--btn-border);
+    border-radius: var(--radius-pill);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-family: var(--sans);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    line-height: var(--lh-snug);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 .btn::before {
   content: '';
@@ -41,23 +44,27 @@
 }
 .btn--bordered {
   --btn-bg: transparent;
-  --btn-fg: #120e0c;
-  --btn-hover-bg: #120e0c;
-  --btn-hover-fg: #ffffff;
-  --btn-hover-border: #120e0c;
+  --btn-fg: var(--ink);
+  --btn-border: var(--border);
+  --btn-hover-bg: var(--primary);
+  --btn-hover-fg: var(--white);
+  --btn-hover-border: var(--primary);
 }
 .btn--inverted {
-  --btn-bg: #ffffff;
-  --btn-fg: #120e0c;
-  --btn-border: #ffffff;
+  --btn-bg: var(--white);
+  --btn-fg: var(--primary);
+  --btn-border: var(--white);
+  --btn-hover-bg: var(--primary-bg);
+  --btn-hover-fg: var(--primary-dark);
+  --btn-hover-border: var(--primary-border);
 }
-.btn__label { overflow-wrap: anywhere; display: flex; gap:10px }
+.btn__label { overflow-wrap: anywhere; display: flex; gap: 10px; align-items: center; }
 .btn__icon { display: inline-flex; flex-shrink: 0; transition: transform 300ms ease; }
 .btn__icon svg { width: 18px; height: 18px; }
-.btn--sm { min-height: 44px; padding: 11px 20px; font-size: 0.76rem; gap: 8px; }
-.btn--lg { min-height: 56px; padding: 17px 34px; font-size: 0.88rem; }
+.btn--sm { min-height: 40px; padding: 10px 18px; font-size: var(--fs-xs); gap: 8px; }
+.btn--lg { min-height: 56px; padding: 16px 34px; font-size: var(--fs-base); }
 .btn--full { width: 100%; }
-.btn:focus-visible { outline: 3px solid #b58d67; outline-offset: 4px; }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .btn:focus-visible:not(:disabled):not([aria-disabled='true']) {
   color: var(--btn-hover-fg);
   border-color: var(--btn-hover-border);
@@ -68,7 +75,7 @@
     color: var(--btn-hover-fg);
     border-color: var(--btn-hover-border);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgb(18 14 12 / 14%);
+    box-shadow: 0 8px 20px rgba(11, 90, 46, 0.2);
   }
   .btn:hover:not(:disabled):not([aria-disabled='true'])::before { transform: translateY(0); }
   .btn:hover:not(:disabled):not([aria-disabled='true']) .btn__icon { transform: translate(2px, -2px); }
@@ -94,30 +101,29 @@
   position: absolute;
   inset: -50% auto -50% -60%;
   width: 40%;
-  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 23%), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.23), transparent);
   transform: translateX(0) skewX(-20deg);
   pointer-events: none;
   animation: booking-shine 4.8s ease-in-out infinite;
 }
-.header__btn:hover, .header__btn:focus-visible,
-.header__btn:hover::after, .header__btn:focus-visible::after {
-  animation-play-state: paused;
-}
 @keyframes booking-glow {
-  0%, 65%, 100% { box-shadow: 0 0 0 0 rgb(203 149 143 / 0%); }
-  25% { box-shadow: 0 0 0 5px rgb(203 149 143 / 18%), 0 5px 18px rgb(203 149 143 / 16%); }
-  50% { box-shadow: 0 0 0 9px rgb(203 149 143 / 0%); }
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(11, 90, 46, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(11, 90, 46, 0.16);
+  }
 }
 @keyframes booking-shine {
-  0%, 10% { transform: translateX(0) skewX(-20deg); }
-  35%, 100% { transform: translateX(450%) skewX(-20deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .header__btn, .header__btn::after { animation: none; }
-  .header__btn::after { display: none; }
-  .btn, .btn::before, .btn__icon { transition: none; }
-  .btn__spinner { animation: none; }
-  .btn:hover:not(:disabled):not([aria-disabled='true']),
-  .btn:active:not(:disabled):not([aria-disabled='true']),
-  .btn:hover:not(:disabled):not([aria-disabled='true']) .btn__icon { transform: none; }
+  0%, 65%, 100% {
+    transform: translateX(0) skewX(-20deg);
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(420%) skewX(-20deg);
+    opacity: 0;
+  }
 }

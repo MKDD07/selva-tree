@@ -1,18 +1,18 @@
 .header__mobile-actions { display: none; }
-.mobile-menu { position: fixed; inset: 0 0 auto auto; width: min(440px, 100%); max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; padding: max(20px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom)); background: #fbf9f5; color: #120e0c; overflow-y: auto; overscroll-behavior: contain; }
+.mobile-menu { position: fixed; inset: 0 0 auto auto; width: min(440px, 100%); max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; padding: max(20px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom)); background: #fbf9f5; color: var(--text); overflow-y: auto; overscroll-behavior: contain; }
 .mobile-menu::backdrop, .contact-sheet::backdrop { background: rgb(18 14 12 / 55%); backdrop-filter: blur(5px); }
 .mobile-menu[open] { animation: menu-enter .3s ease-out; }
 .mobile-menu__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid #dfd6cb; }
 .mobile-menu__logo-link { display: inline-flex; align-items: center; text-decoration: none; }
 .mobile-menu__logo-img { width: 130px; height: auto; max-height: 48px; object-fit: contain; }
-.mobile-menu__top button, .header__menu-toggle { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #ddd2c5; border-radius: 50%; flex-shrink: 0; }
+.mobile-menu__top button, .header__menu-toggle { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #ddd2c5; border-radius: var(--radius-pill); flex-shrink: 0; }
 .mobile-menu nav { padding: 16px 0; }
 .mobile-menu nav a { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e1d8; font-family: 'Catchy Mager', Georgia, serif; font-size: 30px; line-height: 1.25; }
-.mobile-menu nav a svg { margin-left: auto; color: #9c704b; }
-.mobile-menu nav a.active { color: #8a5d3b; }
-.mobile-menu__number { font-family: var(--sans); font-size: 10px; letter-spacing: .1em; color: #8c8176; }
+.mobile-menu nav a svg { margin-left: auto; color: var(--primary); }
+.mobile-menu nav a.active { color: var(--primary); }
+.mobile-menu__number { font-family: var(--sans); font-size: var(--fs-2xs); letter-spacing: .1em; color: var(--text-muted); }
 .mobile-menu__bottom { padding-top: 24px; }
-.mobile-menu__tagline { font-family: var(--serif); font-style: italic; margin-bottom: 18px; color: #736353; font-size: 0.95rem; }
+.mobile-menu__tagline { font-family: var(--serif); font-style: italic; margin-bottom: 18px; color: var(--text-muted); font-size: var(--fs-base); }
 
 /* Actions row: Plan button + 2 circular icon buttons (Mail & Phone) */
 .mobile-menu__actions-row {
@@ -29,9 +29,9 @@
   justify-content: center;
   gap: 8px;
   min-height: 48px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
 }
 .mobile-menu__icon-btn {
   width: 48px;
@@ -39,25 +39,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #ffffff;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
   border: 1px solid #dfd6cb;
-  color: #120e0c;
+  color: var(--text);
   flex-shrink: 0;
   transition: all 0.2s ease;
   box-shadow: 0 2px 6px rgba(18, 14, 12, 0.04);
 }
 .mobile-menu__icon-btn:hover {
-  background: #120e0c;
+  background: var(--primary);
   color: #ffffff;
-  border-color: #120e0c;
+  border-color: var(--primary);
   transform: translateY(-2px);
 }
 
 /* Contact info banner */
 .mobile-menu__contact-info {
   background: #f4eee6;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 10px 14px;
   margin-bottom: 22px;
 }
@@ -66,12 +66,12 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  font-size: 0.88rem;
-  color: #120e0c;
+  font-size: var(--fs-sm);
+  color: var(--text);
 }
 .mobile-menu__contact-label {
-  color: #736353;
-  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
 }
 .mobile-menu__phone-link strong {
   font-weight: 600;
@@ -87,10 +87,10 @@
   justify-content: space-between;
 }
 .mobile-menu__socials-label {
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #8c8176;
+  color: var(--text-muted);
   font-weight: 500;
 }
 .mobile-menu__social-links {
@@ -104,18 +104,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #ffffff;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
   border: 1px solid #dfd6cb;
   color: #57534e;
   transition: all 0.2s ease;
 }
 .mobile-menu__social-link:hover {
-  background: #120e0c;
+  background: var(--primary);
   color: #ffffff;
-  border-color: #120e0c;
+  border-color: var(--primary);
 }
-.mobile-menu :focus-visible, .header__mobile-actions :focus-visible { outline: 2px solid #9c704b; outline-offset: 4px; }
+.mobile-menu :focus-visible, .header__mobile-actions :focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
 @keyframes menu-enter { from { transform: translateX(100%); } to { transform: translateX(0); } }
 @media (max-width: 990px) {
   .header .header__inner, .header.header--scrolled .header__inner { height: calc(76px + env(safe-area-inset-top)); padding: env(safe-area-inset-top) 18px 0; gap: 14px; }
@@ -123,7 +123,7 @@
   .header .header__logo { min-width: 0; }
   .header .header__nav { display: none; }
   .header__mobile-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-  .header__contact { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 44px; padding: 0 12px; border-radius: 24px; background: #120e0c; color: #fff; font-size: .75rem; }
+  .header__contact { display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 44px; padding: 0 12px; border-radius: var(--radius-lg); background: #120e0c; color: #fff; font-size: var(--fs-xs); }
 }
 @media (max-width: 350px) {
   .header .header__inner, .header.header--scrolled .header__inner { padding-right: 12px; padding-left: 12px; gap: 8px; }

@@ -1,4 +1,4 @@
-import { Check, Users, Sparkles } from 'lucide-react';
+import { Users, Armchair, Sparkles, Check, ArrowRight } from 'lucide-react';
 import { Btn, Eyebrow, formatTitle } from '../ui';
 import '../../styles/event-venues.css';
 
@@ -18,50 +18,82 @@ export default function EventVenuesSection({ eyebrow, title, subtitle, intro, ve
             <article key={v.name || idx} className={`venue-card ${idx % 2 === 1 ? 'venue-card--flip' : ''}`} data-reveal>
               <div className="venue-card__media">
                 <img src={v.image} alt={v.name} loading="lazy" />
-                {v.tag && <span className="venue-card__tag">{v.tag}</span>}
+                <div className="venue-card__media-overlay">
+                  {v.badge && <span className="venue-card__badge-glass">{v.badge}</span>}
+                  {v.tag && <span className="venue-card__tag-glass">{v.tag}</span>}
+                </div>
               </div>
 
               <div className="venue-card__content">
-                <span className="venue-card__badge">{v.badge || 'Event Space'}</span>
-                <h3>{v.name}</h3>
+                <div className="venue-card__header-meta">
+                  <span className="venue-card__kicker">Space {String(idx + 1).padStart(2, '0')}</span>
+                  <h3>{v.name}</h3>
+                </div>
+
                 <p className="venue-card__description">{v.description}</p>
                 
                 {v.highlights && (
-                  <ul className="venue-card__highlights">
+                  <div className="venue-card__features">
                     {v.highlights.map((h, i) => (
-                      <li key={i}><Check size={16} aria-hidden="true" /> {h}</li>
+                      <span key={i} className="venue-card__feature-pill">
+                        <Check size={14} className="venue-card__feature-check" />
+                        {h}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 )}
 
                 {v.capacities && (
-                  <div className="venue-card__table-wrap">
-                    <h4><Users size={16} aria-hidden="true" /> Size &amp; Occupancy</h4>
-                    <div className="venue-card__table-scroll">
-                      <table className="venue-card__table">
-                        <thead>
-                          <tr>
-                            <th>Seating</th>
-                            <th>Floating</th>
-                            <th>Theatre</th>
-                            <th>Classroom</th>
-                            <th>Cluster</th>
-                            <th>U-Shape</th>
-                            <th>Boardroom</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><strong>{v.capacities.seating}</strong></td>
-                            <td>{v.capacities.floating}</td>
-                            <td>{v.capacities.theatre}</td>
-                            <td>{v.capacities.classroom}</td>
-                            <td>{v.capacities.cluster}</td>
-                            <td>{v.capacities.uShape}</td>
-                            <td>{v.capacities.boardroom}</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                  <div className="venue-card__capacity-block">
+                    <div className="venue-card__capacity-header">
+                      <h4><Users size={15} /> Size &amp; Seating Capacity</h4>
+                    </div>
+
+                    {/* Primary Hero Capacities */}
+                    <div className="venue-card__hero-capacities">
+                      <div className="venue-card__hero-metric venue-card__hero-metric--primary">
+                        <Armchair size={18} className="venue-card__metric-icon" />
+                        <div>
+                          <span className="venue-card__metric-num">{v.capacities.seating}</span>
+                          <span className="venue-card__metric-label">Seated Guests</span>
+                        </div>
+                      </div>
+
+                      <div className="venue-card__hero-metric venue-card__hero-metric--secondary">
+                        <Sparkles size={18} className="venue-card__metric-icon" />
+                        <div>
+                          <span className="venue-card__metric-num">{v.capacities.floating}</span>
+                          <span className="venue-card__metric-label">Floating Capacity</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Secondary Setup Layouts */}
+                    <div className="venue-card__setup-grid">
+                      {v.capacities.theatre && (
+                        <div className="venue-card__setup-item">
+                          <span className="venue-card__setup-label">Theatre</span>
+                          <strong className="venue-card__setup-val">{v.capacities.theatre}</strong>
+                        </div>
+                      )}
+                      {v.capacities.cluster && (
+                        <div className="venue-card__setup-item">
+                          <span className="venue-card__setup-label">Cluster</span>
+                          <strong className="venue-card__setup-val">{v.capacities.cluster}</strong>
+                        </div>
+                      )}
+                      {v.capacities.classroom && (
+                        <div className="venue-card__setup-item">
+                          <span className="venue-card__setup-label">Classroom</span>
+                          <strong className="venue-card__setup-val">{v.capacities.classroom}</strong>
+                        </div>
+                      )}
+                      {(v.capacities.uShape || v.capacities.boardroom) && (
+                        <div className="venue-card__setup-item">
+                          <span className="venue-card__setup-label">U-Shape / Board</span>
+                          <strong className="venue-card__setup-val">{v.capacities.uShape || v.capacities.boardroom}</strong>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -69,8 +101,8 @@ export default function EventVenuesSection({ eyebrow, title, subtitle, intro, ve
                 <div className="venue-card__cta">
                   <Btn
                     href="#contact-enquiry"
-                    variant="bordered"
-                    size="sm"
+                    variant="solid"
+                    size="md"
                     onClick={(event) => {
                       const contact = document.getElementById('contact-enquiry');
                       if (!contact) return;
@@ -80,7 +112,9 @@ export default function EventVenuesSection({ eyebrow, title, subtitle, intro, ve
                         block: 'start',
                       });
                     }}
-                  >Plan Event in This Space</Btn>
+                  >
+                    Plan Event in This Space <ArrowRight size={16} />
+                  </Btn>
                 </div>
               </div>
             </article>

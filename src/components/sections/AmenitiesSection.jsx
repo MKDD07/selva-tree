@@ -1,3 +1,6 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 import { formatTitle } from '../ui';
 import amenityIcons from '../../assets/amenities';
 
@@ -22,6 +25,8 @@ export default function AmenitiesSection({ title = 'Amenities', items = [], them
     <section className={`sec amenities-sec amenities-sec--${theme}`}>
       <div className="wrap">
         <h2 data-reveal>{formatTitle(title)}</h2>
+
+        {/* Desktop Grid */}
         <div className="amenities-grid">
           {items.map((item, i) => {
             const imgSrc = getAmenityImage(item.iconKey || item.icon, item.label);
@@ -41,6 +46,43 @@ export default function AmenitiesSection({ title = 'Amenities', items = [], them
               </div>
             );
           })}
+        </div>
+
+        {/* Mobile Swiper (Autoplay mode 2 at a time) */}
+        <div className="amenities-mobile-swiper">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={2}
+            spaceBetween={16}
+            loop={items.length > 2}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            className="amenities-swiper"
+          >
+            {items.map((item, i) => {
+              const imgSrc = getAmenityImage(item.iconKey || item.icon, item.label);
+              return (
+                <SwiperSlide key={i} style={{ height: 'auto', display: 'flex', justifyContent: 'center' }}>
+                  <div className="amenity-item" style={{ width: '100%', maxWidth: '200px' }}>
+                    <div className="amenity-item__icon">
+                      {imgSrc ? (
+                        <img
+                          src={imgSrc}
+                          alt={item.label}
+                          className="amenity-item__img"
+                          loading="lazy"
+                        />
+                      ) : null}
+                    </div>
+                    <span>{item.label}</span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
     </section>

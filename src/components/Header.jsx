@@ -30,7 +30,6 @@ export default function Header({ onContact }) {
           <div className="header__nav-action"><Btn to="/contact" className="header__btn" size="sm" icon={false}>Book Now</Btn></div>
         </nav>
         <div className="header__mobile-actions">
-          <button type="button" className="btn btn--solid btn--md" onClick={contact} aria-haspopup="dialog">Contact <ArrowUpRight size={15} aria-hidden="true" /></button>
           <button type="button" className="header__menu-toggle" aria-label="Open navigation menu" aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen(true)}><Menu size={23} /></button>
         </div>
       </div>

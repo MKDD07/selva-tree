@@ -1,15 +1,15 @@
-import carParking from './car-parking.jpg';
-import security from './security.jpg';
-import jacuzzi from './jacuzzi.jpg';
-import tableTennis from './table-tennis.jpg';
-import swimmingPool from './swimming-pool.jpg';
-import childrenPlay from './children-play.jpg';
-import bonfire from './bonfire.jpg';
-import trampoline from './trampoline.jpg';
-import soundSystem from './dj-sound.jpg';
-import driverRooms from './private-rooms.jpg';
-import petFriendly from './pet-friendly.jpg';
-import eventSpaces from './event-lawns.jpg';
+import carParking from './car-parking.webp';
+import security from './security.webp';
+import jacuzzi from './jacuzzi.webp';
+import tableTennis from './table-tennis.webp';
+import swimmingPool from './swimming-pool.webp';
+import childrenPlay from './children-play.webp';
+import bonfire from './bonfire.webp';
+import trampoline from './trampoline.webp';
+import soundSystem from './dj-sound.webp';
+import driverRooms from './private-rooms.webp';
+import petFriendly from './pet-friendly.webp';
+import eventSpaces from './event-lawns.webp';
 
 export const amenityIcons = {
   parking: carParking,
