@@ -635,11 +635,13 @@
   .mosaic-mobile-swiper {
     display: block;
     width: 100%;
-    overflow: visible;
+    max-width: 100%;
+    overflow: hidden;
   }
   .mosaic-swiper {
     width: 100%;
-    overflow: visible;
+    max-width: 100%;
+    overflow: hidden;
     padding-bottom: 6px;
   }
 }
@@ -879,10 +881,13 @@
   .event-showcase__mobile-swiper {
     display: block;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
   .event-showcase-swiper {
     width: 100%;
-    overflow: visible;
+    max-width: 100%;
+    overflow: hidden;
     padding-bottom: 6px;
   }
 }
@@ -1043,6 +1048,13 @@
 .testimonials-col-right {
   min-width: 0;
   position: relative;
+  max-width: 100%;
+}
+
+.testimonials-swiper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .testimonial-card {
@@ -2220,11 +2232,14 @@
   .about-center__mobile-swiper {
     display: block;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     margin-bottom: 32px;
   }
   .about-center-swiper {
     width: 100%;
-    overflow: visible;
+    max-width: 100%;
+    overflow: hidden;
     padding-bottom: 6px;
   }
   .about-pillar {
